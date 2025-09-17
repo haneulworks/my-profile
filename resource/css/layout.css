@@ -50,13 +50,11 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   -moz-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  height: 12rem;
-  padding: 0 5rem;
+  height: 12rem; /*padding: 0 5rem;*/
 }
 @media (max-width: 991px) {
   .header-inner {
-    height: 5.9rem;
-    padding: 0 1.2rem;
+    height: 5.9rem; /*padding: 0 1.2rem;*/
   }
 }
 

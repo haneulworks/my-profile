@@ -8,9 +8,9 @@ header{ position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255
 	&:has(.is-focus){ background-color: $color-realwhite; transition: 0.3s;}
 }
 
-.header-inner{ @include d-flex; @include align-center; @include justify-between; height: $header-height; padding: 0 5rem;
+.header-inner{ @include d-flex; @include align-center; @include justify-between; height: $header-height; /*padding: 0 5rem;*/
 	//반응형
-	@include res991{ height: 5.9rem; padding: 0 1.2rem;}
+	@include res991{ height: 5.9rem; /*padding: 0 1.2rem;*/}
 }
 .logo{ display: inline-block; width: 12rem; height: 7.8rem;
 	//반응형

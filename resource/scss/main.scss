@@ -1,4 +1,10 @@
 @charset 'utf-8';
 @import 'mixin';
 
-.main-section{ display: block; min-height: 100dvh;}
+.main-section{ display: block; min-height: 100dvh; padding: calc($header-height + 6rem) 0;}
+
+#intro{ @include d-flex; @include align-center;}
+
+.profile-img{ width: 20rem; border-radius: 1.6rem; overflow: hidden;
+	.img{ display: block; width: 100%; max-width: fit-content;}
+}
