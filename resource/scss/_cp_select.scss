@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 select,
 .ui-select{ min-width: 9rem; padding: 1.2rem 1.2rem; padding-right: 3.2rem; border: 1px solid $color-graybd; border-radius: .8rem; color: $color-black; font: inherit; font-size: map-get($txt-sizes, depth2); font-weight: 400; background-image: url('../img/common/icon-pager-next.png'); background-repeat: no-repeat; background-size: 1.2rem; background-position: right 1.2rem center; appearance: none; -webkit-appearance: none; -moz-appearance: none;

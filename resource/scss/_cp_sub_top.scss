@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 /* 서브 레이아웃 */
 body{

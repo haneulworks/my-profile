@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 footer{ margin-top: 10rem;
 	@include res991{ position: relative; margin-top: 6rem;}

@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 .wrap{ position: relative; width: 100%; max-width: 192rem; margin: 0 auto;}
 .container{ @include container;}

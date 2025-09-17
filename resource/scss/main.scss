@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 .main-section{ display: block; min-height: 100dvh; padding: calc($header-height + 6rem) 0;}
 

@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 input[type="text"],
 .ui-input[type="text"]{ border-radius: .8rem;}

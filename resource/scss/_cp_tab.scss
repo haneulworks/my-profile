@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'mixin';
+@use 'mixin' as *;
 
 // 기본 접근성 탭 - 사용중인곳 :: 메인페이지 .main-board
 /* 탭 스크립트는 common.js 264 line // 접근성 탭 기능
