@@ -1,0 +1,77 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/* border set */
+.bd{
+	&-all{
+		&-main{ border: 1px solid $color-main;}
+		&-main2{ border: 1px solid $color-main2;}
+		&-black{ border: 1px solid $color-black;}
+		&-graybd{ border: 1px solid $color-graybd;}
+	}
+	&-t{
+		&-main{ border-top: 1px solid $color-main;}
+		&-main2{ border-top: 1px solid $color-main2;}
+		&-black{ border-top: 1px solid $color-black;}
+		&-graybd{ border-top: 1px solid $color-graybd;}
+	}
+	&-r{
+		&-main{ border-right: 1px solid $color-main;}
+		&-main2{ border-right: 1px solid $color-main2;}
+		&-black{ border-right: 1px solid $color-black;}
+		&-graybd{ border-right: 1px solid $color-graybd;}
+	}
+	&-b{
+		&-main{ border-bottom: 1px solid $color-main;}
+		&-main2{ border-bottom: 1px solid $color-main2;}
+		&-black{ border-bottom: 1px solid $color-black;}
+		&-graybd{ border-bottom: 1px solid $color-graybd;}
+	}
+	&-l{
+		&-main{ border-left: 1px solid $color-main;}
+		&-main2{ border-left: 1px solid $color-main2;}
+		&-black{ border-left: 1px solid $color-black;}
+		&-graybd{ border-left: 1px solid $color-graybd;}
+	}
+}
+
+.dashed{
+	&-all{
+		&-black{ border: 1px dashed $color-black;}
+		&-graybd{ border: 1px dashed $color-graybd;}
+	}
+	&-t{
+		&-black{ border-top: 1px dashed $color-black;}
+		&-graybd{ border-top: 1px dashed $color-graybd;}
+	}
+	&-r{
+		&-black{ border-right: 1px dashed $color-black;}
+		&-graybd{ border-right: 1px dashed $color-graybd;}
+	}
+	&-b{
+		&-black{ border-bottom: 1px dashed $color-black;}
+		&-graybd{ border-bottom: 1px dashed $color-graybd;}
+	}
+	&-l{
+		&-black{ border-left: 1px dashed $color-black;}
+		&-graybd{ border-left: 1px dashed $color-graybd;}
+	}
+}
+
+/* border-radius */
+@for $i from 0 through 20 {
+	.radius-#{$i} {
+		border-radius: calc(#{$i} / 10)rem;
+	}
+}
+.radius{
+	&-full { border-radius: 9999px; } // 완전 원형
+	&-all { border-radius: 0.8rem; 
+		&-12{ border-radius: 1.2rem;}
+		&-16{ border-radius: 1.6rem;}
+	}
+	&-top { border-radius: 0.8rem 0.8rem 0 0; }
+	&-bottom { border-radius: 0 0 0.8rem 0.8rem; }
+	&-left { border-radius: 0.8rem 0 0 0.8rem; }
+	&-right { border-radius: 0 0.8rem 0.8rem 0; }
+}

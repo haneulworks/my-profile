@@ -1,0 +1,95 @@
+@charset 'utf-8';
+@import 'mixin';
+
+select,
+.ui-select{ min-width: 9rem; padding: 1.2rem 1.2rem; padding-right: 3.2rem; border: 1px solid $color-graybd; border-radius: .8rem; color: $color-black; font: inherit; font-size: map-get($txt-sizes, depth2); font-weight: 400; background-image: url('../img/common/icon-pager-next.png'); background-repeat: no-repeat; background-size: 1.2rem; background-position: right 1.2rem center; appearance: none; -webkit-appearance: none; -moz-appearance: none;
+		@include res991{ font-size: map-get($txt-sizes, depth2-m); padding: 1.1rem; background-size: 1rem; background-position: right 1rem center;}
+
+	&::-ms-expand{ display: none;}
+	&:focus{ outline-color: $color-main;}
+
+	+ label{ margin-left: .7rem;}
+
+	//글자크기 및 높이
+	&-s{ font-size: map-get($caption-sizes, depth1); min-width: 8rem; padding: 1.1rem 1rem;
+		@include res991{ font-size: map-get($caption-sizes, depth1);}
+	}
+	&-m{ font-size: map-get($txt-sizes, depth1); min-width: 10rem; padding: 1.5rem 1.6rem; background-position: right 2rem center;
+		@include res991{ font-size: map-get($txt-sizes, depth1-m); padding: 1.7rem 1.6rem;}
+	}
+	&-l{ font-size: map-get($txt-sizes, depth1); min-width: 12rem; padding: 2.3rem 1.6rem;}
+
+	&-half{ width: calc(50% - .4rem);}
+	&-full{ width: 100%;
+		+ .btn-full{ margin-top: 1rem;}
+	}
+
+	&-default{ border: 1px solid $color-graybd; background-color: $color-realwhite;}
+	
+}
+
+label:not(.hidden) + select,
+label:not(.hidden) + .select{ margin-left: .5rem;}
+
+.custom-select{ position: relative; display: inline-block; width: fit-content; min-width: 12rem;
+	&__trigger{ width: 100%; padding: 1.2rem 1.2rem; line-height: 1; border: 1px solid $color-graybd; border-radius: .4rem; color: $color-black; font: inherit; font-size: map-get($txt-sizes, depth2); font-weight: 400; background-color: $color-realwhite; background-image: url('../img/common/icon-pager-next.png'); background-repeat: no-repeat; background-size: 1.2rem; background-position: right 1.2rem center; text-align: left; cursor: pointer;
+		@include res991{ font-size: map-get($txt-sizes, depth2-m); padding: 1.2rem; background-size: 1rem; background-position: right 1rem center;}
+		&:focus {
+			/* outline: 2px solid $color-main; */
+			/* background: #f0f8ff; */
+		}
+	}
+	&__options {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		border: 1px solid $color-graybd;
+		border-radius: .4rem;
+		background: $color-realwhite;
+
+		// 애니메이션 설정
+		max-height: 0;
+		overflow-y: hidden;
+		opacity: 0;
+		transform: translateY(-0.5rem);
+		transition: max-height 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+
+		&.is-open {
+			margin-top: .4rem;
+			max-height: 20rem;
+			opacity: 1;
+			transform: translateY(0);
+		}
+		&.scrollable {
+			overflow-y: auto;
+		}
+
+		@include res991{ max-height: 15rem;}
+	}
+
+	&__option {
+		padding: 1rem 1.2rem;
+		cursor: pointer;
+		font-size: map-get($txt-sizes, depth2);
+		transition: background 0.2s;
+
+		@include res_hover{ &:hover{ background: $color-graybg;}}
+
+		@include res991{ font-size: map-get($txt-sizes, depth2-m); padding: 0.9rem 1rem; }
+	}
+}
+
+
+.select-wrap{ @include d-flex; @include align-center; @include flex-wrap; gap: .8rem; row-gap: .8rem;
+	&.nowrap{ @include flex-nowrap;}
+	&.al-center{ @include justify-center;}
+	&.al-start{ @include justify-start;}
+	&.al-end{ @include justify-end;}
+	label:not(.hidden) + select, label:not(.hidden) + .select{ margin-left: unset;}
+	.btn-full + .btn-full{ margin-top: unset;}
+}

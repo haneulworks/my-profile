@@ -1,0 +1,273 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/* radio checkbox */
+.form-check input[type=radio],
+.form-check input[type=checkbox] {
+	@include sr-only;
+}
+.chk-area {	@include d-flex; @include flex-wrap; gap: $spacer-4; row-gap: $spacer-3;
+	&.chk-column { @include flex-column; }
+	.form-check{
+		+ .form-check{ margin-left: 0;}
+	}
+}
+
+.form-check { display: inline-flex; align-items: center;
+	+ .form-check{ margin-left: $spacer-4;}
+	//라디오 박스 체크 박스 공통
+	input[type=radio],
+	input[type=checkbox] {
+		~ label {
+			position: relative;
+			display: inline-flex;
+			min-height: $rdo-size;
+			padding-left: calc(#{$rdo-size} + #{$spacer-2});
+			font-size: map-get($txt-sizes, depth2);
+			
+			@include res991{
+				padding-left: calc(#{$rdo-size} + #{$spacer-1});
+				font-size: map-get($txt-sizes, depth2-m);
+			}
+
+			&::before{
+				display: block;
+				content: '';
+				transition: .1s cubic-bezier(.4, .0, .23, 1);
+			}
+			//&::before { z-index: 3; }
+			//&::after { z-index: 4; }
+		}
+		&:focus {
+			~ label {
+				&::before{ @include focus($offset: .2rem, $color: $color-main);}
+			}
+		}
+		&:disabled {
+			+ label { color: $color-lightgray; cursor: default; }
+		}
+	}
+
+	//라디오 박스
+	input[type=radio] {
+		~ label {
+			line-height: calc(#{$rdo-size} + 1px);
+			&::before {
+				@include position($t: 0, $l: 0);
+				width: $rdo-size;
+				height: $rdo-size;
+				background-color: $color-realwhite;
+				border: 6px solid #cacaca;
+				border-radius: $rd-full;
+				box-sizing: border-box;
+				@include res991{
+					top: 2px;
+					width: calc($rdo-size - 4px);
+					height: calc($rdo-size - 4px);
+					border-width: 5px;
+				}
+			}
+		}
+		&:checked {
+			~ label {
+				&::before {
+					border-color: $color-main;
+				}
+				&::after {
+				}
+			}
+			&:disabled {
+				~ label {
+					&::before {
+						border-color: $color-graybd;
+					}
+				}
+			}
+		}
+		&:disabled {
+			~ label {
+				&::before {
+					border-color: $color-graybd;
+				}
+			}
+		}
+	}
+
+	//체크 박스
+	input[type=checkbox] {
+		~ label {
+			line-height: $chk-size;
+			&::before {
+				content: '';
+				@include position($t: 0, $l: 0);
+				width: $chk-size;
+				height: $chk-size;
+				background-color: $color-realwhite;
+				border: 1px solid $color-graybd;
+				border-radius: $rd-4;
+				box-sizing: border-box;
+			}
+			&::after {
+				content: '';
+				$pos: calc((#{$chk-size} - #{$chk-primary-chk}) / 2);
+				@include position($t: $pos, $l: $pos);
+				width: $chk-primary-chk;
+				height: $chk-primary-chk;
+				background-image: url('../img/common/icon-check.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 12px;
+				opacity: 0;
+			}
+
+			@include res991{ line-height: calc(#{$chk-size} - 2px);
+				&::before{
+					width: calc(#{$chk-size} - 4px);
+					height: calc(#{$chk-size} - 4px);
+				}
+				&::after{
+					$pos: calc((#{$chk-size} - #{$chk-primary-chk} - 4px) / 2);
+					width: calc(#{$chk-primary-chk} - 4px);
+					height: calc(#{$chk-primary-chk} - 4px);
+					background-size: 10px;
+				}
+			}
+		}
+		&:checked {
+			~ label {
+				&::before {
+					background-color: $color-main;
+					border-color: $color-main;
+				}
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+		&:disabled {
+			~ label {
+				&::before {
+					border-color: $color-graybd;
+					background-color: $color-graybg;
+				}
+				&::after {
+					background-image: url(../img/common/ico_check_primary_disabled.svg);
+				}
+			}
+		}
+	}
+
+	&.ico-only {
+		display: inline-flex;
+		vertical-align: middle;
+		> [type=checkbox] {
+			~ label {
+				padding-left: $chk-size !important;
+			}
+		}
+		> [type=radio] {
+			~ label {
+				padding-left: $rdo-size !important;
+			}
+		}
+	}
+}
+
+/* 지니웍스 기본 체크박스 커스텀 */
+.type01{
+	.b-chk{
+		+ label{ 
+				display: inline-block;
+				position: relative;
+				margin: 0 24px 0 0;
+				padding: 0 0 0 32px;
+				@include text-style(depth1, 400, 1.6);
+				vertical-align: middle;
+				cursor: pointer;
+				@include res(768px){ width: calc(50vw - 16px); margin: 0 6px 0 0; padding: 14px 0 14px 34px; border-radius: 8PX; border: 1px solid $color-graybd;}
+			&::before{
+				content: "";
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				width: $chk-size;
+				height: $chk-size;
+				border-radius: 4PX;
+				border: 1px solid $color-graybd;
+				box-sizing: border-box;
+				@include res991{ left: 12px; width: 16px; height: 16px; margin: 0;}
+			}
+		}
+		&:checked + label{
+			@include res991{ border-color: $color-main;}
+			&::before{
+				background-color: $color-main;
+				border-color: $color-main;
+				background-image: url('../img/common/icon-check.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: $chk-primary-chk;
+				@include res991{ background-size: 10px;}
+			}
+		}
+	}
+
+	.b-radio{
+		+ label{ display: inline-block;
+			position: relative;
+			margin-right: 24px;
+			padding-left: 32px;
+			@include text-style(depth1, 400, 1.6);
+			cursor: pointer;
+			vertical-align: super;
+			&::before{
+				content: "";
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				padding: 0;
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
+				border: unset;
+				background-color: #cacace;
+				font-size: 13px;
+				box-sizing: border-box;
+				transform: translateY(-50%);
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 6px;
+				width: 8px;
+				height: 8px;
+				border-radius: 8px;
+				background-color: $color-realwhite;
+				transform: translateY(-50%);
+			}
+		}
+
+		&:checked + label{
+			&::before{
+				background-color: $color-main;
+			}
+			&::after {
+				content: "";
+				display: block;
+					position: absolute;
+					top: 50%;
+					left: 6px;
+					width: 8px;
+					height: 8px;
+					border-radius: 8px;
+					background-color: $color-realwhite;
+					transform: translateY(-50%);
+			}
+		}
+	}
+}

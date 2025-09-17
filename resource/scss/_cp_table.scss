@@ -1,0 +1,217 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/* === 공통: 테이블 외곽 === */
+.table-scroll{ width: 100%; overflow-x: visible; 
+	@include res991{ overflow-x: auto; -webkit-overflow-scrolling: touch;
+		&::-webkit-scrollbar {
+			width: 3px; /* 세로축 스크롤바 폭 너비 */
+			height: 3px; /* 가로축 스크롤바 폭 너비 */
+		}
+		&::-webkit-scrollbar-thumb {
+			background: #555555;
+			border-radius: 999px;
+		}
+		&::-webkit-scrollbar-track {
+			background: #E0E3E5;
+		}
+	}
+}
+
+.table-wrap{ width: 100%;
+	&:has(.table-basic){
+		@include res991{ min-width: 60rem;}
+	}
+}
+
+/* === 기본 공통: 헤더/셀 === */
+.table-basic{ width: 100%; border-collapse: collapse; @include text-style(depth2, 400, 1.6); color: $color-black;
+	th, td{ padding: 1rem 1.2rem; border: 1px solid $color-graybd;
+		@include res991{ padding: 1rem .8rem;}
+	}
+	thead{
+		th{ border-bottom: none; background-color: $color-lightblue; font-weight: 500; color: $color-black; text-align: center; white-space: nowrap;}
+	}
+	tbody{
+		tr:nth-child(even){ background-color: $color-lightblue;}
+	}
+	td{ background-color: $color-realwhite; text-align: center; word-break: break-word;}
+}
+
+/* === table-row: 행기준 기본 테이블 커스텀 === */
+.table-basic{
+	&.table-row{
+		tr{ background-color: $color-realwhite;}
+		th{ background-color: $color-lightblue; font-weight: 500; color: $color-black; vertical-align: middle; white-space: nowrap;}
+		td{ text-align: left; vertical-align: middle;}
+	}
+}
+
+/* === 리스트형 테이블 === */
+.table-list{ width: 100%; border-collapse: collapse; @include text-style(depth1, 400, 1.6); color: $color-black;
+	thead{ position: relative;
+		&::before{ content: ''; position: absolute; top: 0; left: 0; display: block; border-radius: 1.2rem; background-color: $color-graybg; width: 100%; height: 100%; z-index: -1;}
+		@include res991{ display: none;}
+	}
+	@include res991{ display: block;
+		tbody{ display: block;}
+	}
+
+	tbody{
+		tr{ border-bottom: 1px solid $color-graybd;
+			@include res_hover{
+				&:hover td{ background-color: $color-hover;}
+			}
+		}
+	}
+
+	th, td{ padding: 2.46rem .4rem;
+		@include res991{ padding: 0rem .5rem;}
+	}
+
+	tr{ 
+		&:has(th){
+			&:first-child{
+				th:first-child{ padding-left: 2rem;}
+				th:last-child{ padding-right: 2rem;}
+			}
+		}
+		@include res991{ @include d-flex; @include flex-wrap; column-gap: 1rem; position: relative; width: auto; padding: 1.6rem 1.2rem; padding-left: 5.2rem;
+			&:has(th){
+				&:first-child{
+					th:first-child{ padding-left: unset;}
+					th:last-child{ padding-right: unset;}
+				}
+			}
+		}
+	}
+
+	th{ font-weight: 600;
+		&.subject{min-width: 68rem; max-width: 68rem;}
+	}
+	td{ background-color: $color-realwhite; color: $color-graybasic; text-align: center; word-break: break-word;
+		&:first-child{ padding-left: 2rem; position: relative;}
+		&:last-child{ padding-right: 2rem;}
+		&:first-of-type{border-top-left-radius : 5px;}
+		&.subject{ position: relative; min-width: 68rem; max-width: 68rem; text-align: left; color: $color-black; font-weight: 500;
+			&:has(.noti){
+				.ellipsis { max-width: calc(100% - 7rem);}
+			}
+			&:has(.icon-new) a{ position: relative;}
+			.subject-inner{ @include d-flex; position: relative;}
+			
+			.ellipsis { font-size: inherit; max-width: calc(100% - 2rem); display: inline-block; @include ellipsis-single;}
+		}
+		.noti{ color: $color-main; font-weight: 600;}
+		
+		.status{ @include d-flex; @include align-center; @include justify-center; width: fit-content; min-width: 7rem; height: 3rem; margin: 0 auto; border: 1px solid $color-graybasic; border-radius: 999px; @include caption-style(depth1, 400, 1.6);}
+		.b-etc-box{ @include d-flex; @include align-center; margin-left: 2rem;}
+		//&.cate{ color: $color-main; font-weight: 500;}
+		.icon{ font-size: 0;
+			+ .icon{ margin-left: .8rem;}
+			&-clip{ display: block; width: 1.8rem; height: 1.8rem; margin: 0 auto; background-image: url('../img/common/icon-clip.png'); background-repeat: no-repeat; background-size: 100%; background-position: center;}
+			&-new{ display: inline-block; width: 2rem; height: 2rem; background-image: url('../img/common/icon-new.png'); background-repeat: no-repeat; background-size: 100%; background-position: center;}
+			&-secret{ display: inline-block; width: 2rem; height: 2rem; background-image: url('../img/common/icon-secret.png'); background-repeat: no-repeat; background-size: 100%; background-position: center;}
+		}
+		
+		//반응형
+		@include res991{ /* display: inline-block; */ text-align: left; padding: 0;
+			&:first-child{ padding-left: unset;}
+			&:last-child{ padding-right: unset;}
+			&:not(.num){ display: inline-flex; gap: .8rem;}
+			&.num{ position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4.2rem; padding: 0 0.5rem; text-align: center;
+				.article-chk{ top: -4rem;}
+			}
+			&.subject{ display: block; width: 100%; min-width: 100%; max-width: 100%; margin-top: .6rem; margin-bottom: .6rem;
+				.ellipsis{ display: inline-block; width: fit-content; max-width: 100%;}
+			}
+			&.cate{ order: -2;}
+
+			&.state{ order: -1;}
+
+			.status{ display: inline-block; min-width: unset; width: unset; height: unset; margin: 0 auto; border: unset; border-radius: unset; @include caption-style(depth1, 400, 1.6);
+				// 답변여부 상태
+				&-answer{ display: inline-block; width: unset; height: unset; margin: 0 auto; border: unset; border-radius: unset; @include caption-style(depth1, 400, 1.6);}
+			}
+
+			.b-etc-box{ margin-left: .8rem;}
+			.icon{ font-size: 0;
+				+ .icon{ margin-left: .4rem;}
+				&-clip{ display: inline-block; vertical-align: text-top; width: 1.4rem; height: 1.4rem;}
+			}
+
+			.mo-tit{ display: inline-block;}
+		}
+	}
+}
+
+// 관리자 테이블
+.admin-table-list{
+	&.table-list{
+		th{ padding: .8rem .4rem;}
+		td{ padding: 2rem .4rem;}
+
+		tr:has(th){
+			&:first-child{
+				th:first-child{ padding-left: 2rem;}
+				th:last-child{ padding-right: 2rem;}
+			}
+			&:nth-of-type(n+2){
+				th{ padding-top: 0;}
+			}
+		}
+		td:first-child{ padding-left: 2rem;}
+		td:last-child{ padding-right: 2rem;}
+
+		th.subject,
+		td.subject{ min-width: 40rem;}
+
+		// 관리자 테이블 반응형 초기화 : 가로스크롤로 사용(.table-wrap에 .table-scroll 추가하기)
+		@include res991{ width: 140rem; display: table;
+			thead{ display: table-header-group;}
+			tbody{ display: table-row-group;}
+			tr{ display: table-row;}
+			td{ display: table-cell; padding: 1rem .4rem; text-align: center;
+				&:first-child{ padding-left: 2rem;}
+				&:last-child{ padding-right: 2rem;}
+
+				&.num{ position: unset; transform: unset; width: auto; text-align: center;}
+				&.subject{ display: table-cell; width: auto; min-width: unset; max-width: unset; margin-top: unset; margin-bottom: unset;
+					.ellipsis{ display: inline-block; width: auto; max-width: unset;}
+				}
+				&.cate{ order: unset;}
+
+				&.state{ order: unset;}
+
+				.status{ display: inline-block; min-width: unset; width: unset; height: unset; margin: 0 auto; border: unset; border-radius: unset; @include caption-style(depth1, 400, 1.6);
+					// 답변여부 상태
+					&-answer{ display: inline-block; width: unset; height: unset; margin: 0 auto; border: unset; border-radius: unset; @include caption-style(depth1, 400, 1.6);}
+				}
+
+				.b-etc-box{ margin-left: .8rem;}
+				.icon{ font-size: 0;
+					+ .icon{ margin-left: .4rem;}
+					&-clip{ display: inline-block; vertical-align: text-top; width: 1.4rem; height: 1.4rem;}
+				}
+
+				.mo-tit{ display: inline-block;}
+			}
+		}
+	}
+}
+
+
+.badge{ @include d-flex; @include align-center; @include justify-center; min-width: 7rem; max-width: fit-content; height: 3rem; margin: 0 auto; padding: 0 .8rem; border: 1px solid transparent;  border-color: $color-graybasic; color: $color-graybasic; border-radius: 999px; @include caption-style(depth1, 400, 1.6);
+	// Q&A 답변여부
+	&.stay{ border-color: $color-graybasic; color: $color-graybasic;}
+	&.complete{ border-color: $color-main2; color: $color-main2;}
+
+	// R&D 공모에서 사용
+	&.pre{ border-color: $color-graybasic; color: $color-graybasic;}
+	&.open,
+	&.active{ border-color: $color-main2; color: $color-main2;}
+	&.end{ border-color: $color-black; color: $color-black;}
+
+	//반응형
+	@include res991{ display: inline-block; min-width: unset; width: unset; height: unset; margin: 0 auto; padding: 0; border: unset; border-radius: unset; font-size: 1.4rem;}
+}

@@ -1,0 +1,94 @@
+@charset 'utf-8';
+@import 'mixin';
+/* reset.css - 기본 브라우저 스타일 초기화 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, button, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+caption, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: 'Pretendard', sans-serif;
+	font-style: normal;
+    vertical-align: baseline;
+	-webkit-tap-highlight-color:transparent; /* 클릭시 하이라이트 초기화 */
+	-webkit-text-size-adjust : none;  /* 크롬, 사파리, 오페라 신버전 */
+    -ms-text-size-adjust : none;  /* IE */
+    -moz-text-size-adjust : none;  /* 파이어폭스 */
+    -o-text-size-adjust : none;  /* 오페라 구버전 */
+	appearance: none;
+    -webkit-appearance: none;
+    -webkit-overflow-scrolling:auto;
+    box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	color: $color-black;
+}
+
+/* h 태그들 원래 사이즈 복원 (브라우저 기본값 기준) */
+h1 { font-size: 2em; font-weight: bold; }    /* 32px */
+h2 { font-size: 1.5em; font-weight: bold; }  /* 24px */
+h3 { font-size: 1.17em; font-weight: bold; } /* 18.72px */
+h4 { font-size: 1em; font-weight: bold; }    /* 16px */
+h5 { font-size: 0.83em; font-weight: bold; } /* 13.28px */
+h6 { font-size: 0.67em; font-weight: bold; } /* 10.72px */
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+menu, ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+}
+
+*:focus{ outline-color: $color-main;}
+
+.is-focus{ @include is-focus;}

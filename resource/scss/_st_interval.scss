@@ -1,0 +1,92 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/* === 간격 === */
+
+/* margin */
+.m{
+	&x-auto{ margin: 0 auto;}
+    &r{
+        &-auto{ margin-right: auto;}
+		&-10{ margin-right: 1rem;}
+        &-20{ margin-right: 2rem;}
+        &-30{ margin-right: 3rem;}
+    }
+    &l{
+        &-auto{ margin-left: auto;}
+        &-4{ margin-left: .4rem;}
+        &-8{ margin-left: .8rem;}
+        &-10{ margin-left: 1rem;}
+        &-20{ margin-left: 2rem;}
+        &-30{ margin-left: 3rem;}
+    }
+    &t{
+        &-10{ margin-top: 1rem;}
+        &-14{ margin-top: 1.4rem;}
+        &-16{ margin-top: 1.6rem;}
+        &-18{ margin-top: 1.8rem;}
+        &-20{ margin-top: 2rem;}
+        &-22{ margin-top: 2.2rem;}
+        &-24{ margin-top: 2.4rem;
+			@include res991{ margin-top: 1.6rem;}
+		}
+        &-30{ margin-top: 3rem;}
+        &-32{ margin-top: 3.2rem;
+			@include res991{ margin-top: 1.6rem;}
+		}
+        &-40{ margin-top: 4rem;}
+        &-45{ margin-top: 4.5rem;}
+        &-46{ margin-top: 4.6rem;}
+        &-48{ margin-top: 4.8rem;
+			@include res991{ margin-top: 2.4rem;}
+		}
+        &-50{ margin-top: 5rem;}
+        &-60{ margin-top: 6rem;}
+        &-70{ margin-top: 7rem;}
+        &-80{ margin-top: 8rem;}
+    }
+    &b{
+        &-10{ margin-bottom: 1rem;}
+		&-14{ margin-bottom: 1.4rem;}
+		&-16{ margin-bottom: 1.6rem;}
+        &-18{ margin-bottom: 1.8rem;}
+        &-20{ margin-bottom: 2rem;}
+        &-30{ margin-bottom: 3rem;
+			@include res991{ margin-bottom: 1.6rem;}
+		}
+        &-40{ margin-bottom: 4rem;}
+        &-50{ margin-bottom: 5rem;}
+        &-60{ margin-bottom: 6rem;}
+        &-70{ margin-bottom: 7rem;
+			@include res991{ margin-bottom: 4rem;}
+		}
+        &-120{ margin-bottom: 12rem;}
+    }
+}
+
+//padding
+.pd-all{
+    &-10{ padding: 1rem;}
+    &-20{ padding: 2rem;}
+    &-40{ padding: 4rem;
+		@include res991{ padding: 3rem;}
+
+		&__16{ padding: 4rem;
+			@include res991{ padding: 1.6rem;}
+		}
+	}
+	&-90{ padding: 9rem;
+		@include res991{ padding: 6rem;}
+	}
+}
+.pd-x{
+    &-22{ padding-left: 2.2rem; padding-right: 2.2rem;}
+    &-56{ padding-left: 5.6rem; padding-right: 5.6rem;}
+}
+.pd-y{
+    &-6{ padding-top: 0.6rem; padding-bottom: 0.6rem;}
+    &-12{ padding-top: 1.2rem; padding-bottom: 1.2rem;}
+}
+
+.w-100per{ width: 100%;}
+.w-50per{ width: 50%;}

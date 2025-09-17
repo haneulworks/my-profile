@@ -1,0 +1,60 @@
+@charset 'utf-8';
+@import 'mixin';
+
+// background-color
+.bg{
+	&-main{ background-color: $color-main;}
+	&-main2{ background-color: $color-main2;}
+	&-point{ background-color: $color-point;}
+
+	&-white{ background-color: $color-realwhite;}
+	&-realblack{ background-color: $color-realblack;}
+	&-black{ background-color: $color-black;}
+
+	&-semiblack{ background-color: $color-semiblack;}
+	&-gray{ background-color: $color-gray;}
+	&-graybasic{ background-color: $color-graybasic;}
+	&-darkgray{ background-color: $color-darkgray;}
+	&-grayfont{ background-color: $color-grayfont;}
+	&-graydisable{ background-color: $color-graydisable;}
+	&-graybg{ background-color: $color-graybg;}
+	&-graybd{ background-color: $color-graybd;}
+	&-lightgray{ background-color: $color-lightgray;}
+
+	&-lightblue{ background-color: $color-lightblue;}
+	&-cyan{ background-color: $color-cyan;}
+
+	&-dangerbg{ background-color: $color-dangerbg;}
+	&-successbg{ background-color: $color-successbg;}
+	&-warningbg{ background-color: $color-warningbg;}
+}
+
+// font-color
+.color{
+	&-main{ color: $color-main;}
+	&-main2{ color: $color-main2;}
+	&-sub{ color: $color-sub;}
+	&-point{ color: $color-point;}
+	&-red{ color: $color-red;}
+
+	&-white{ color: $color-realwhite;}
+	&-realblack{ color: $color-realblack;}
+	&-black{ color: $color-black;}
+
+	&-semiblack{ color: $color-semiblack;}
+	&-gray{ color: $color-gray;}
+	&-graybasic{ color: $color-graybasic;}
+	&-darkgray{ color: $color-darkgray;}
+	&-grayfont{ color: $color-grayfont;}
+	&-graydisable{ color: $color-graydisable;}
+	&-graybg{ color: $color-graybg;}
+	&-graybd{ color: $color-graybd;}
+	&-lightgray{ color: $color-lightgray;}
+
+	$color-lightblue: #f3f6fd;
+	$color-cyan: #F6FAFF;
+
+	&-danger{ color: $color-danger;}
+	&-success{ color: $color-success;}
+	&-warning{ color: $color-warning;}
+}

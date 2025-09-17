@@ -1,0 +1,24 @@
+@charset 'utf-8';
+@import 'mixin';
+
+.icon{ font-size: 0;}
+
+.sub-sec{
+	+ .sub-sec{ margin-top: 7rem;}
+
+	@include res991{
+		+ .sub-sec{ margin-top: 4rem;}
+		&.mt-70{ margin-top: 4rem;}
+	}
+}
+
+.sub-sec-title{ margin-bottom: 2.4rem;
+	@include res991{ margin-bottom: 2.4rem;}
+}
+
+.sub-article-title{ margin-bottom: 2.4rem;
+ 	margin-bottom: 2.4rem;
+}
+
+.sub-sec-text{ word-break: keep-all; text-wrap-style: pretty;}
+

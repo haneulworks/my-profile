@@ -1,0 +1,130 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/* 서브 레이아웃 */
+body{
+	&.airtech{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__airtech.jpg');}
+	}
+	&.rnd{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__rnd.jpg');}
+	}
+	&.techprod{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__techprod.jpg');}
+	}
+	&.support{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__support.jpg');}
+	}
+	&.patent{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__patent.jpg');}
+	}
+	&.bizcenter{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__bizcenter.jpg');}
+	}
+	&.mypage{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__mypage.jpg');}
+	}
+	&.etc{
+		.sub-visual{ background-image: url('../img/sub/sub-visual__etc.jpg');}
+	}
+
+	@include res991{
+		&.airtech{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__airtech_mo.jpg');}
+		}
+		&.rnd{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__rnd_mo.jpg');}
+		}
+		&.techprod{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__techprod_mo.jpg');}
+		}
+		&.support{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__support_mo.jpg');}
+		}
+		&.patent{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__patent_mo.jpg');}
+		}
+		&.bizcenter{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__bizcenter_mo.jpg');}
+		}
+		&.mypage{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__mypage_mo.jpg');}
+		}
+		&.etc{
+			.sub-visual{ background-image: url('../img/sub/sub-visual__etc_mo.jpg');}
+		}
+	}
+}
+.sub-visual{ position: relative; @include d-flex; width: 100%; height: 39rem; background-repeat: no-repeat; background-position: center; background-size: cover;
+	@include res991{ height: 27.7rem;}
+	/* 서브페이지 대메뉴 제목 */
+	h2{ position: absolute; top: 19rem; left: 50%; transform: translateX(-50%); color: $color-realwhite; text-align: center; font-size: 4.8rem; font-weight: 700; line-height: 1.5; letter-spacing: -0.025rem; text-shadow: 0px 0px 2px #000;
+		@include res991{ top: 12.4rem; width: 100%; padding: 0 1.2rem; font-size: 2.8rem; line-height: 1.4;}
+	}
+
+	//lnb : pull dowm menu
+	.pull-down-menu{ position: relative; width: 100%; height: 6.4rem; margin-top: auto;
+		&::before{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.9; background: $color-sub; backdrop-filter: blur(6.5px); }
+
+		ul.container{ position: relative; @include d-flex; height: 6.4rem; z-index: 2;}
+
+		.home a{ display: inline-block; width: 6.4rem; height: 6.4rem; background-color: rgba(20, 115, 230, 0.6); background-image: url('../img/common/symbol-mark.png'); background-repeat: no-repeat; background-size: 4rem; background-position: center;}
+
+		.li-depth01{ position: relative; min-width: 22rem; height: 100%; //border-right: 1px solid rgba(255,255,255,0.28);
+			&::before{ content: ''; position: absolute; top: 0; right: 0; width: 1px; height: 100%; background-color: rgba(255,255,255,0.28);}
+
+			.path-selected{ display: block; width: 100%; padding: 1.841rem 3rem; padding-right: 4.1rem; font-size: 1.7rem; font-weight: 600; line-height: 1.6; color: rgba(255,255,255,.8);
+				&::after{ content: ''; opacity: .8; position: absolute; top: 50%; right: 1.7rem; transform: translateY(-50%); width: 2.4rem; height: 2.4rem; background-image: url('../img/common/arrow-drop-down.png'); background-repeat: no-repeat; background-size: 1rem; background-position: center; transition: .2s;}
+			}
+			&:last-of-type{
+				&::after{ opacity: 1;}
+				.path-selected{ background-color: rgba(255,255,255,.08); color: $color-realwhite;}
+			}
+			&.active{
+				.path-selected{ background-color: rgba(255,255,255,.08); color: $color-realwhite;
+					&::after{ opacity: 1; transform: rotate(180deg) translateY(50%); transition: .2s;}
+				}
+			}
+		}
+		
+		.path-depth{ display: none; z-index: 1; position: absolute; top: 100%; left: 0; width: 100%; border: 1px solid $color-graybd; border-top: unset; background-color: $color-realwhite;
+			li{
+				&:hover a{ background-color: $color-hover;}
+				&.active a{ background-color: $color-lightblue; color: $color-black; text-decoration: underline; text-underline-position: from-font;}
+				&:last-child a{ border-bottom: unset;}
+				&:has(.etc-menu-hide){ display: none;}
+			}
+			a{ display: block; padding: 1.471rem 2.5rem; border-bottom: 1px solid $color-graybd; color: $color-darkgray; @include text-style(depth2, 400, 1.6);}
+		}
+
+		@include res991{ height: 5rem;
+			ul.container{ padding: 0; height: 5rem;}
+			.home a{ width: 5rem; height: 5rem; background-size: 2.9rem;}
+			.li-depth01{ display: none;
+				.path-selected{ font-size: 1.4rem; padding: 1.36rem 1.6rem;}
+				&:last-of-type{ display: block; width: calc(100% - 5rem);
+					.path-selected{ background-color: unset;}
+				}
+			}
+
+			.path-depth{
+				a{ padding: 1.36rem 1.6rem;}
+			}
+		}
+	}
+}
+
+.page-title{ @include d-flex; @include align-center; @include justify-between; margin-top: 7rem; margin-bottom: 3rem;
+	h3{ @include title-style(depth1, 700, 1.5);}
+	@include res991{ margin-top: 3rem; margin-bottom: 1.6rem;}
+}
+
+.page-util-buttons{
+	.icon{ cursor: pointer; font-size: 0; width: 4.8rem; height: 4.8rem; border-radius: 4.8rem; background-color: $color-graybg; background-repeat: no-repeat; background-position: center; background-size: 2.4rem;}
+	.btn-urlCopy{ background-image: url('../img/common/icon-share.png');}
+	.btn-print{ background-image: url('../img/common/icon-print.png');}
+	@include res991{
+		.icon{ width: 4.2rem; height: 4.2rem; background-size: 1.8rem;}
+		.btn-print{ display: none;}
+	}
+}

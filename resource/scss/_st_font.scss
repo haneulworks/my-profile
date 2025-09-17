@@ -1,0 +1,236 @@
+@charset 'utf-8';
+@import 'mixin';
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: url('../fonts/Pretendard-Black.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: url('../fonts/Pretendard-ExtraBold.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: url('../fonts/Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src:url('../fonts/Pretendard-SemiBold.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: url('../fonts/Pretendard-Medium.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/Pretendard-Regular.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: url('../fonts/Pretendard-Light.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	font-display: swap;
+	src: url('../fonts/Pretendard-ExtraLight.woff') format('woff');;
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	font-display: swap;
+	src: url('../fonts/Pretendard-Thin.woff') format('woff');;
+}
+
+/* title */
+.tit {
+	&1 { @include title-style(depth1, 600, 1.3); }
+	&2 { @include title-style(depth2, 700, 1.3); }
+	&3 { @include title-style(depth3, 700, 1.5); }
+	&4 { @include title-style(depth4, 600, 1.5); }
+	&5 { @include title-style(depth5, 600, 1.5); }
+}
+/* text */
+.txt{
+	&1{ @include text-style(depth1, 400, 1.6);}
+	&2,
+	&__default{ @include text-style(depth2, 400, 1.6);}
+}
+/* caption */
+.caption{
+	&1{ @include caption-style(depth1, 400, 1.6);}
+	&2{ @include caption-style(depth2, 400, 1.6);}
+}
+/* essential */
+.essential{
+	&::after{ content: '*'; margin-left: .3rem; margin-top: -.4rem; @include caption-style(depth1, 600, 0); color: $color-main; vertical-align: middle; line-height: 0;}
+}
+
+/* font-size */
+@for $i from 10 through 60 {
+	.fs-#{$i} {
+		font-size: calc(#{$i} / 10)rem;
+		@include res991{ font-size: calc(#{$i} / 12)rem;}
+	}
+}
+
+/* font-weight */
+.fw{
+	&-400{ font-weight: 400;}
+	&-500{ font-weight: 500;}
+	&-600{ font-weight: 600;}
+	&-700{ font-weight: 700;}
+	&-800{ font-weight: 800;}
+}
+
+/* 줄바꿈 기준 */
+.keep-all{ word-break: keep-all;
+	/* 줄바꿈 기준 + 줄바꿈 스타일 */
+	&-pretty{ word-break: keep-all; text-wrap-style: pretty;}
+	&-balance{ word-break: keep-all; text-wrap-style: balance;}
+}
+.break-all{ word-break: break-all;
+	/* 줄바꿈 기준 + 줄바꿈 스타일 */
+	&-pretty{ word-break: break-all; text-wrap-style: pretty;}
+	&-balance{ word-break: break-all; text-wrap-style: balance;}
+}
+
+/* 줄바꿈 스타일 */
+.t-pretty{ text-wrap-style: pretty;}
+.t-balance{ text-wrap-style: balance;}
+
+/* class::lists */
+.lists{
+    li{
+        position: relative;
+        padding-left:1rem;
+        &:before{
+            content:'';
+            position: absolute;
+            left:0;
+        }
+        & + li{
+            margin-top: .4rem;
+        }
+    }
+    &.num{
+        counter-reset: num;
+        li{
+            &:before{
+                counter-increment: num;
+                content: counter(num) ".";
+            }
+        }
+        &.cir{
+            li{
+                &:before{
+                    line-height:1.6rem;
+                    @include d-flex;
+                    @include align-center;
+                    @include justify-center;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    font-weight: 400;
+                    border-radius: 100%;
+                    border: 0.1px solid #555;
+                    vertical-align: middle;
+                }
+            }
+        }
+		&-square{ counter-reset: num;
+			li{ padding-left: 4.2rem;
+				&::before{ counter-increment: num; content: counter(num); top: .15rem; @include d-flex; @include align-center; @include justify-center; width: 2.6rem; height: 2.6rem; border-radius: .4rem; background-color: $color-main; color: $color-realwhite; @include text-style(depth2,700,1);}
+				+ li{ margin-top: 1.6rem;}
+			}
+
+			@include res991{
+				li{ padding-left: 3.2rem; word-break: keep-all;
+					&::before{ top: 0; width: 2rem; height: 2rem; font-size: 1.5rem; line-height: 1.5rem;}
+					+ li{ margin-top: .8rem;}
+				}
+			}
+		}
+    }
+    &.dot{
+        li{
+            &:before{
+                content:'·';
+            }
+        }
+    }
+    &.bar{
+        li{
+            &:before{
+                content:'-';
+            }
+        }
+    }
+	&.ko{
+        > li{
+            &:nth-child(1){
+                &::before{ content: "가.";}
+            }
+            &:nth-child(2){
+                &::before{ content: "나.";}
+            }
+            &:nth-child(3){
+                &::before{ content: "다.";}
+            }
+            &:nth-child(4){
+                &::before{ content: "라.";}
+            }
+            &:nth-child(5){
+                &::before{ content: "마.";}
+            }
+            &:nth-child(6){
+                &::before{ content: "바.";}
+            }
+            &:nth-child(7){
+                &::before{ content: "사.";}
+            }
+            &:nth-child(8){
+                &::before{ content: "아.";}
+            }
+            &:nth-child(9){
+                &::before{ content: "자.";}
+            }
+            &:nth-child(10){
+                &::before{ content: "차.";}
+            }
+            &:nth-child(11){
+                &::before{ content: "카.";}
+            }
+            &:nth-child(13){
+                &::before{ content: "타.";}
+            }
+            &:nth-child(14){
+                &::before{ content: "파.";}
+            }
+            &:nth-child(15){
+                &::before{ content: "하.";}
+            }
+        }
+    }
+}

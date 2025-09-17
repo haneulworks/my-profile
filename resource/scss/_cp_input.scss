@@ -1,0 +1,61 @@
+@charset 'utf-8';
+@import 'mixin';
+
+input[type="text"],
+.ui-input[type="text"]{ border-radius: .8rem;}
+
+//비밀번호 입력란 특정 브라우저에서 보이기/감추기 기본값 제거
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+	display: none;
+}
+
+.ui-input{ min-width: 9rem; height: 5rem; padding: 1.05rem 1.5rem; border: 1px solid $color-graybd; border-radius: .8rem; color: $color-black; @include text-style(depth1,400,1.6); box-sizing: border-box;
+	@include res991{ font-size: map-get($txt-sizes, depth1-m); padding: 1.4rem 1.2rem; background-size: 1rem; background-position: right 1rem center;}
+
+	&::placeholder{ color: $color-grayfont;}
+	&::-ms-expand{ display: none;}
+	&:focus{ outline-color: $color-main;}
+	&:read-only{ background-color: $color-graybg; color: #111;}
+
+	+ label{ margin-left: .7rem;}
+
+	//글자크기 및 높이
+	&-s{ font-size: map-get($caption-sizes, depth1); min-width: 8rem; padding: 1.1rem 1rem;}
+	&-m{ font-size: map-get($txt-sizes, depth2); min-width: 10rem; padding: 1.9rem 1rem;}
+	&-l{ font-size: map-get($txt-sizes, depth1); min-width: 12rem; padding: 2.3rem 1rem;}
+
+	&-half{ width: calc(50% - .4rem);}
+	&-full{ width: 100%;
+		+ .btn-full{ margin-top: 1rem;}
+	}
+
+	&-default{ border: 1px solid $color-graybd; background-color: $color-realwhite;}
+}
+
+
+
+.input-wrap{ @include d-flex; @include align-center; @include flex-wrap; gap: .8rem; row-gap: .8rem;
+	&.nowrap{ @include flex-nowrap;}
+	&.al-center{ @include justify-center;}
+	&.al-start{ @include justify-start;}
+	&.al-end{ @include justify-end;}
+}
+
+.input-box{ @include d-flex;
+	//세로정렬
+	&-col{ @include flex-column;
+		label{}
+		input,
+		.ui-input{}
+	}
+	//가로정렬
+	&-row{
+		label{}
+		input,
+		.ui-input{}
+
+		label:not(.hidden) + input,
+		label:not(.hidden) + .ui-input{ margin-left: .5rem;}
+	}
+}

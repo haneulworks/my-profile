@@ -1,0 +1,91 @@
+@use "sass:math";
+
+//색상 변수
+$color-main: #7bc4f7;
+$color-main2: #4792b1;
+$color-sub: #22455e;
+$color-subdown: #c5c9d5;
+$color-point: #50e4ff;
+$color-hover: #F6FAFD;
+
+$color-realblack: #000;
+$color-realwhite: #fff;
+$color-black: #111;
+
+$color-semiblack: #303030;
+$color-gray: #545456;
+$color-graybasic: #666;
+$color-darkgray: #464648;
+$color-grayfont: #747478;
+$color-graydisable: #a2a2a4;
+$color-graybg: #f7f7f7;
+$color-graybd: #ddd;
+$color-lightgray: #f3f3f3;
+
+$color-lightblue: #F3F5F9;
+$color-cyan: #F6FAFF;
+
+$color-red: #E63946;
+
+$color-danger:     #D32F2F;
+$color-success:    #1976D2;
+$color-warning:    #F9A825;
+
+$color-dangerbg:   #FDECEA;
+$color-successbg:  #E3F2FD;
+$color-warningbg:  #FFF8E1;
+
+//글자크기 변수
+$tit-sizes: (
+	depth1: 4rem,
+	depth2: 3.2rem,
+	depth3: 2.8rem,
+	depth4: 2.4rem,
+	depth5: 2rem,
+	depth1-m: 2.4rem,
+	depth2-m: 2.2rem,
+	depth3-m: 1.8rem,
+	depth4-m: 1.6rem,
+	depth5-m: 1.5rem
+);
+
+$txt-sizes: (
+	depth1: 1.8rem,
+	depth2: 1.6rem,
+	depth1-m: 1.4rem,
+	depth2-m: 1.3rem,
+);
+
+$caption-sizes: (
+	depth1: 1.5rem,
+	depth2: 1.4rem,
+	depth1-m: 1.3rem,
+	depth2-m: 1.2rem,
+);
+
+// 크기 관련 변수
+$rdo-size: 20px;
+$rdo-chk: 8px;
+$chk-size: 20px;
+$chk-primary-chk: 12px;
+
+// 여백
+$spacer-1: 4px;
+$spacer-2: 8px;
+$spacer-3: 16px;
+$spacer-4: 24px;
+
+// 공통 스타일
+$rd-full: 50%;
+$rd-4: 4px;
+
+// 컬러 매핑
+$gray-20: $color-graybg;
+$gray-40: $color-graybd;
+$gray-50: $color-lightgray;
+$gray-60: $color-darkgray;
+$primary: $color-main;
+$white: $color-realwhite;
+
+$container: 148rem;
+$header-height: 12rem;

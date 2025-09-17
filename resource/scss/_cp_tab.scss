@@ -1,0 +1,92 @@
+@charset 'utf-8';
+@import 'mixin';
+
+// 기본 접근성 탭 - 사용중인곳 :: 메인페이지 .main-board
+/* 탭 스크립트는 common.js 264 line // 접근성 탭 기능
+	<div class="tab-wrap">
+		<!-- 탭 리스트 -->
+		<ul class="tab-list">
+			<li class="active">
+				<button type="button" class="tab-item">탭 아이템1</button>
+			</li>
+			<li class="">
+				<button type="button" class="tab-item">탭 아이템2</button>
+			</li>
+		</ul>
+
+		<!-- 탭 컨텐츠 -->
+		<div class="tab-content">
+			
+		</div>
+		<div class="tab-content">
+			
+		</div>
+	</div>
+*/
+.tab{
+	&-wrap{ position: relative;
+		.btn{
+			@include res_hover{
+				&:hover{ text-decoration: unset;}
+			}
+		}
+	}
+
+	&-list{ @include d-flex; gap: 1rem; position: relative;
+		&-scroll{ overflow-x: auto; width: 100%;}
+		&.item-nowrap{
+			.tab-item{ white-space: nowrap;}
+		}
+		li{ border: 2px solid transparent;
+			.tab-item{ transition: all .2s; @include d-flex; @include align-center; @include justify-center; min-width: 13rem; height: 5rem; padding: 1rem; border: 2px solid #B7B7B7; border-radius: 9999px; background-color: unset; color: $color-grayfont; @include text-style(depth1,700,1.5); cursor: pointer;}
+			
+			&.active{
+				.tab-item{ border-color: $color-main; color: $color-main;}
+			}
+
+			&.is-focus{ .tab-item{border: 2px dashed $color-main; border-radius: 99999px;}}
+		}
+
+		// 반응형
+		@include res991{ gap: .6rem;
+			
+			li{
+				.tab-item{ min-width: 8rem; height: 4rem;}
+			}
+		}
+	}
+
+	&-content{ margin-top: 5rem;
+
+		// 반응형
+		@include res991{ margin-top: 3rem;}
+	}
+}
+
+
+//게시판 탭
+.board-tab-wrap{ margin-bottom: 3rem;
+	//반응형
+	@include res991{ width: 100%; margin-bottom: 1.6rem;}
+}
+.board-tab-list01{ @include d-flex;
+	li{ border: 1px solid #B7B7B7; border-right: 0; color: #666;
+		&:last-of-type{ border-right: 1px solid #b7b7b7;}
+		@include res_hover{
+			&:hover{ background-color: $color-hover;}
+		}
+		&.active{ border-color: $color-main; background-color: $color-main; color: $color-realwhite; text-decoration: underline; text-underline-position: from-font;}
+		a{ display: block; padding: 1.561rem 3.2rem; @include text-style(depth1, 400, 1.6);}
+		//&:has(.is-focus){ border: 2px dashed $color-main}
+	}
+	&:has(li.active:not(.all-cate)){
+		li.all-cate.active{ border-color: #B7B7B7; background-color: $color-realwhite; color: #666; text-decoration: unset;}
+	}
+
+	//반응형
+	@include res991{ overflow-x: auto; white-space: nowrap; scroll-behavior: smooth; // 부드러운 기본 스크롤 지원
+		li{
+			a{ padding: 1.2rem 1.6rem;}
+		}
+	}
+}
