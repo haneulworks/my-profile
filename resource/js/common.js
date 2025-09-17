@@ -92,6 +92,7 @@ $(function () {
 	$(window).on('resize', handleSiteMapState); // 창 크기 바뀔 때도 실행
 });
 
+//페이지 프린트
 $('.btn-print').on('click', function () {
     $('[data-aos]').css({
         'opacity': '1',
@@ -100,7 +101,6 @@ $('.btn-print').on('click', function () {
 	
 	window.print();
 });
-
 
 // URL 복사
 $('.btn-urlCopy').on('click', function() {
@@ -130,58 +130,6 @@ $('.btn-urlCopy').on('click', function() {
 		}
 		$temp.remove();
 	}
-});
-
-//게시판 탭 현재위치로 스크롤 이동
-$(function () {
-	const $tabList = $('.board-tab-list01');
-
-	// all-cate가 아닌 active 탭 우선
-	let $activeTab = $tabList.find('li.active').not('.all-cate');
-
-	// 없으면 all-cate fallback
-	if ($activeTab.length === 0) {
-		$activeTab = $tabList.find('li.all-cate.active');
-	}
-
-	if ($activeTab.length) {
-		const scrollLeft =
-			$activeTab.position().left + $tabList.scrollLeft()
-			- ($tabList.width() / 2)
-			+ ($activeTab.outerWidth() / 2);
-
-		// 부드럽지 않고 빠르게 이동
-		$tabList.scrollLeft(scrollLeft);
-	}
-});
-
-//비밀번호 입력값 show/hide
-$(document).ready(function () {
-	const $input = $('.inpuFnChk');
-	const $eyeIcon = $('.icoPassEye');
-
-	// 입력값 있으면 아이콘 활성화
-	$input.on('input', function () {
-		if ($(this).val().trim() !== '') {
-			$eyeIcon.addClass('active'); // 시각적으로 활성화만 하고
-		} else {
-			$eyeIcon.removeClass('active on'); // .on도 제거
-			$input.attr('type', 'password');
-		}
-	});
-
-	// 아이콘 클릭 시 보이기/가리기 토글
-	$eyeIcon.on('click', function () {
-		if (!$input.val().trim()) return; // 입력값 없으면 무시
-
-		if ($(this).hasClass('on')) {
-			$(this).removeClass('on');
-			$input.attr('type', 'password');
-		} else {
-			$(this).addClass('on');
-			$input.attr('type', 'text');
-		}
-	});
 });
 
 // 접근성 탭 기능 - 사용중인곳 :: 메인페이지 미니보드(.main-board), 
