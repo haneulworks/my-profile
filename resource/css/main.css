@@ -27,3 +27,7 @@
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+
+#projects { /*background-color: #3b4047;*/
+  background-color: #32363d;
+}
