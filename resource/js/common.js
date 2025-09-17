@@ -1,96 +1,74 @@
+(() => {
+	const target = 'a, button';   // 적용할 요소
+	let isTabFocus = false;       // 최근 포커스가 Tab 키로 이동했는지 여부
+
+	/* ──────────────────────────────
+	* 1) 키 입력·마우스 클릭 구분
+	* ────────────────────────────── */
+	document.addEventListener('keydown', e => {
+		if (e.key === 'Tab') isTabFocus = true;   // Tab 키 눌림 → 키보드 포커스
+	});
+	document.addEventListener('mousedown', () => {
+		isTabFocus = false;                       // 마우스 클릭 → 키보드 아님
+	});
+
+	/* ──────────────────────────────
+	* 2) 마우스 Hover
+	* ────────────────────────────── */
+	document.addEventListener('mouseover', e => {
+		if (e.target.matches(target)) e.target.classList.add('is-hover');
+	});
+	document.addEventListener('mouseout', e => {
+		if (e.target.matches(target)) e.target.classList.remove('is-hover');
+	});
+
+	/* ──────────────────────────────
+	* 3) 키보드(Tab) Focus
+	* ────────────────────────────── */
+	document.addEventListener('focusin', e => {
+		if (isTabFocus && e.target.matches(target)) {
+			e.target.classList.add('is-focus');
+		}
+	});
+	document.addEventListener('focusout', e => {
+		if (e.target.matches(target)) e.target.classList.remove('is-focus');
+	});
+})();
 
 // header
-$(document).ready(function () {
-	// GNB
-	$('.depth_01 > li')
-		.on('mouseenter focusin', function () {
-		$(this).addClass('is-hover');
-	})
-		.on('mouseleave focusout', function () {
-		$(this).removeClass('is-hover');
-	});
-	
-	// GNB tabindex
-	$('.gnb .depth_01 > li > a').on('focus', function(){
-		// 현재 포커스된 메뉴의 depth_02__wrap 찾기
-		const $depthWrap = $(this).closest('li').find('.depth_02__wrap');
-
-		// depth_02__wrap이 있으면 내부의 링크들에 tabindex 추가
-		if ($depthWrap.length > 0) {
-			$depthWrap.find('a').attr('tabindex', '0');
-		}
-	});
-	$('.gnb .depth_01 > li > a').on('blur', function(){
-		const $depthWrap = $(this).closest('li').find('.depth_02__wrap');
-		if ($depthWrap.length > 0) {
-			$depthWrap.find('a').removeAttr('tabindex');
-		}
-	});
-
-	// 햄버거버튼
-	$('.sitemap-trigger').on('click', function () {
-		$(this).toggleClass('is-active is-hover');
-		$(this).next('.sitemap-wrap').stop().slideToggle(300);
-		
-		// body overflow 토글
-		if ($(this).hasClass('is-active')) {
-			$('body').css('overflow', 'hidden');
-		} else {
-			$('body').css('overflow', '');
-		}
-	});
-});
-
-//사이트맵(햄버거메뉴)
-$(function () {
-	if (window.innerWidth <= 720) {
-		// 모바일(≤ 480px)일 때만 실행
-		$('.site-map .depth1 > a.active').each(function () {
-			$(this).closest('.depth1').find('> ul').show();
-		});
-	}
-});
-//사이트맵(햄버거메뉴)
-function handleSiteMapState() {
-	const $siteMap = $('.site-map');
-
-	if (window.innerWidth <= 720) {
-		// 모바일: 아코디언 열기 + 이벤트 바인딩
-		$('.site-map .depth1 > a').off('click').on('click', function (e) {
-			e.preventDefault();
-
-			const $this = $(this);
-			const $parent = $this.closest('.depth1');
-			const $submenu = $parent.find('> ul');
-
-			if ($this.hasClass('active')) {
-				$('.site-map .depth1 > a').removeClass('active');
-				$('.site-map .depth1 > ul').slideUp();
-			} else {
-				$('.site-map .depth1 > a').removeClass('active');
-				$('.site-map .depth1 > ul').slideUp();
-				$this.addClass('active');
-				$submenu.stop(true, true).slideDown();
-			}
-		});
-
-		// 초기에 active된 메뉴 열기
-		$('.site-map .depth1 > a.active').each(function () {
-			$(this).closest('.depth1').find('> ul').show();
-		});
-
-	} else {
-		// PC: 아코디언 이벤트 제거
-		$('.site-map .depth1 > a').off('click');
-
-		// PC에서도 active된 메뉴는 항상 보여야 함
-		$('.site-map .depth1 > ul').show();
-	}
+// 스크롤 이동
+function scrollAnkerTo(id) {
+	const x = document.getElementById(id);
+	x.scrollIntoView({ behavior: "smooth", block: "start" });
 }
-$(function () {
-	handleSiteMapState(); // 초기 실행
-	$(window).on('resize', handleSiteMapState); // 창 크기 바뀔 때도 실행
+
+// 스크롤 이벤트 라이브러리 AOS 사용
+AOS.init({
+	duration: 1000,
+	disable: function() { // 모바일에서 AOS 사용안함
+		var maxWidth = 991; // 모바일 기기 너비 기준 (예: 768px)
+		return window.innerWidth < maxWidth;
+	}
 });
+
+$(document).ready(function() {
+	//물방울 마우스 효과 (S)
+	$('.water-drop-effect').on('mouseenter', '.water-drop-inner', function(e){
+		x = e.pageX - $(this).offset().left,
+			y = e.pageY - $(this).offset().top;
+		$(this).find('span').css({top: y, left: x});
+		$(this).find('span').addClass('active');
+	});
+
+	$('.water-drop-effect').on('mouseleave', '.water-drop-inner', function(e){
+		x = e.pageX - $(this).offset().left,
+			y = e.pageY - $(this).offset().top;
+		$(this).find('span').css({top: y, left: x});
+		$(this).find('span').removeClass('active');
+	});
+	//물방울 마우스 효과 (E)
+});
+
 
 //페이지 프린트
 $('.btn-print').on('click', function () {
@@ -226,31 +204,4 @@ $(function () {
 	$(document).on('focusout', function (e) {
 		$(e.target).removeClass('is-focus');
 	});
-});
-
-$(document).ready(function() {
-	//물방울 마우스 효과 (S)
-	$('.water-drop-effect').on('mouseenter', '.water-drop-inner', function(e){
-		x = e.pageX - $(this).offset().left,
-			y = e.pageY - $(this).offset().top;
-		$(this).find('span').css({top: y, left: x});
-		$(this).find('span').addClass('active');
-	});
-
-	$('.water-drop-effect').on('mouseleave', '.water-drop-inner', function(e){
-		x = e.pageX - $(this).offset().left,
-			y = e.pageY - $(this).offset().top;
-		$(this).find('span').css({top: y, left: x});
-		$(this).find('span').removeClass('active');
-	});
-	//물방울 마우스 효과 (E)
-});
-
-// 스크롤 이벤트 라이브러리 AOS 사용
-AOS.init({
-	duration: 1000,
-	disable: function() { // 모바일에서 AOS 사용안함
-		var maxWidth = 991; // 모바일 기기 너비 기준 (예: 768px)
-		return window.innerWidth < maxWidth;
-	}
 });

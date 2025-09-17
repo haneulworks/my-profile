@@ -10,11 +10,44 @@
 <link rel="stylesheet" type="text/css" href="resource/css/style.css">
 <link rel="stylesheet" type="text/css" href="resource/css/layout.css">
 <link rel="stylesheet" type="text/css" href="resource/css/component.css">
+<link rel="stylesheet" type="text/css" href="resource/css/main.css">
 	
 </head>
 <body>
+<div id="wrap">
+	<header>
+		<div class="header-inner container">
+			<h1 class="logo"><a href="/" class="">로고</a></h1>
+
+			<nav class="gnb">
+				<ul>
+					<li>
+						<a href="javascript:scrollAnkerTo('intro')">소개</a>
+					</li>
+					<li>
+						<a href="javascript:scrollAnkerTo('certificates')">자격증</a>
+					</li>
+					<li>
+						<a href="javascript:scrollAnkerTo('career')">경력사항</a>
+					</li>
+					<li>
+						<a href="javascript:scrollAnkerTo('projects')">프로젝트</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section id="intro" class="main-section">소개 내용</section>
+		<section id="certificates" class="main-section">자격증 내용</section>
+		<section id="career" class="main-section">자격증 내용</section>
+		<section id="projects" class="main-section">프로젝트 내용</section>
+	</main>
+	<footer></footer>
+</div>
 	
 </body>
 <script defer type="text/javascript" src="resource/js/swiper.min.js"></script>
 <script defer type="text/javascript" src="resource/js/aos.js"></script>
+<script defer type="text/javascript" src="resource/js/common.js"></script>
 </html>
