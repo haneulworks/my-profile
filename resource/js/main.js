@@ -1,4 +1,5 @@
 $(function() {
+	// 메인 섹션 스크롤 휠
 	const $sections = $('.main-section');
 	let currentIndex = 0;
 	let isScrolling = false;

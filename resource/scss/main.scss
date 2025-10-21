@@ -1,14 +1,24 @@
 @charset 'utf-8';
 @use 'mixin' as *;
 
-.main-section{ display: block; min-height: 100dvh; padding: calc($header-height + 6rem) 0;
+.main-section{ display: block; min-height: 100dvh; padding: calc($header-height + 6rem) 0;}
 
+#intro{ @include d-flex; @include align-center;
+	@include res_hover{
+		a{ position: relative;
+			&::after{ content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background-color: $color-black; transition: width 0.3s ease;}
+			&:hover::after{ width: 100%;}
+		}
+	}
 }
 
-#intro{ @include d-flex; @include align-center;}
-
-.profile-img{ width: 20rem; border-radius: 1.6rem; overflow: hidden;
+.profile-img{ width: 20rem; border-radius: 1.6rem; overflow: hidden; opacity: 0; transform: translateX(-100%); animation:slideIn 1s ease-out forwards;
 	.img{ display: block; width: 100%; max-width: fit-content;}
+
+	@keyframes slideIn {
+		0%{ opacity: 0; transform: translateX(-100%);}
+		100%{ opacity: 1; transform: translateX(0);}
+	}
 }
 
 #projects{ /*background-color: #3b4047;*/ background-color: #32363d;}

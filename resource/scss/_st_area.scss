@@ -23,8 +23,12 @@
 //flex
 .d-flex{ @include d-flex;}
 .align-center{ @include align-center;}
+.align-start{ @include align-start;}
+.align-end{ @include align-end;}
 .justify-between{ @include justify-between;}
 .justify-center{ @include justify-center;}
+.justify-start{ @include justify-start;}
+.justify-end{ @include justify-end;}
 .flex-column{ @include flex-column;}
 .flex-wrap{ @include flex-wrap;}
 

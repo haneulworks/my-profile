@@ -14,11 +14,35 @@
   -ms-flex-align: center;
   align-items: center;
 }
+@media (min-width: 1280px) {
+  #intro a {
+    position: relative;
+  }
+  #intro a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #111;
+    -webkit-transition: width 0.3s ease;
+    transition: width 0.3s ease;
+  }
+  #intro a:hover::after {
+    width: 100%;
+  }
+}
 
 .profile-img {
   width: 20rem;
   border-radius: 1.6rem;
   overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: slideIn 1s ease-out forwards;
+          animation: slideIn 1s ease-out forwards;
 }
 .profile-img .img {
   display: block;
@@ -26,6 +50,30 @@
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+@-webkit-keyframes slideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 #projects { /*background-color: #3b4047;*/
