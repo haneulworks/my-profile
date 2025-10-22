@@ -6,6 +6,31 @@ header{ position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255
 	&:focus,
 	&:has(.is-hover),
 	&:has(.is-focus){ background-color: $color-realwhite; transition: 0.3s;}
+
+	&.whiteMode{
+		.gnb{
+			ul{
+				> li{
+					> a{ color: $color-realwhite;}
+				}
+				
+			}
+		}
+
+		&:hover,
+		&:focus,
+		&:has(.is-hover),
+		&:has(.is-focus){ 
+			.gnb{
+				ul{
+					> li{
+						> a{ color: $color-black;}
+					}
+					
+				}
+			}
+		}
+	}
 }
 
 .header-inner{ @include d-flex; @include align-center; @include justify-between; height: $header-height; /*padding: 0 5rem;*/

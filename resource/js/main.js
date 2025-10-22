@@ -7,12 +7,22 @@ $(function() {
 	function scrollToSection(index) {
 		if (index < 0 || index >= $sections.length) return;
 		isScrolling = true;
+
+		const $targetSection = $sections.eq(index);
+
 		$('html, body').stop().animate({
-			scrollTop: $sections.eq(index).offset().top
+			scrollTop: $targetSection.offset().top
 		}, 800, function() {
 			isScrolling = false;
+			currentIndex = index;
+
+			// header whiteMode 토글
+			if ($targetSection.is('#projects')) {
+				$('header').addClass('whiteMode');
+			} else {
+				$('header').removeClass('whiteMode');
+			}
 		});
-		currentIndex = index;
 	}
 
 	$(window).on('wheel', function(e) {

@@ -36,6 +36,12 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+header.whiteMode .gnb ul > li > a {
+  color: #fff;
+}
+header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a, header.whiteMode:has(.is-hover) .gnb ul > li > a, header.whiteMode:has(.is-focus) .gnb ul > li > a {
+  color: #111;
+}
 
 .header-inner {
   -ms-display: flexbox; /* Over IE10 */
