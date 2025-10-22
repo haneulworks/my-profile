@@ -41,4 +41,12 @@ $(function() {
 			}
 		}
 	});
+
+	// 프로그래스 바
+	$('.progress-bar').each(function() {
+		var percent = $(this).find('.progress-per').text().trim();
+		$(this).find('.progress-fill').animate({
+			width: percent + '%'
+		}, 1000);
+	});
 });

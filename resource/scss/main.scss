@@ -21,4 +21,24 @@
 	}
 }
 
+.skills__list { 
+	.skills__item{	margin-bottom: 20px; color: $color-semiblack;
+		&[data-skill="HTML5"] .progress-fill{ background-color: #e34f26;}
+		&[data-skill="CSS3"] .progress-fill{ background-color: #264de4;}
+		&[data-skill="SCSS"] .progress-fill{ background-color: #c6538c;}
+		&[data-skill="JavaScript"] .progress-fill{ background-color: #f7df1e;}
+		&[data-skill="jQuery"] .progress-fill{ background-color: #0769ad;}
+		&[data-skill="PHP"] .progress-fill{ background-color: #8892be;}
+		&[data-skill="JSP"] .progress-fill{ background-color: #ff6f00;}
+	}
+}
+
+/* 프로그래스 */
+.progress{
+	// 프로그래스 - 바
+	&-bar{ position: relative; width: 100%; height: 1rem; background-color: #eee; border-radius: 999px; margin-top: .8rem;}
+	&-fill{ position: absolute; top: 0; left: 0; height: 100%; background-color: $color-main; border-radius: 999px; width: 0; transition: width .3s ease-in-out; }
+	&-per{ position: absolute; right: 0; top: -2.5rem; @include caption-style(depth2, 400, 1.7); color: $color-grayfont;}
+}
+
 #projects{ /*background-color: #3b4047;*/ background-color: #32363d;}
