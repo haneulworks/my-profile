@@ -30,30 +30,29 @@
 			<nav class="gnb">
 				<ul>
 					<li>
-						<a href="javascript:scrollAnkerTo('intro')" title="소개 섹션으로 이동">소개</a>
+						<a href="javascript:scrollAnkerTo('about')" title="ABOUT ME 섹션으로 이동">ABOUT ME</a>
 					</li>
 					<li>
-						<a href="javascript:scrollAnkerTo('career')" title="자격사항 섹션으로 이동">자격 사항</a>
+						<a href="javascript:scrollAnkerTo('skills')" title="SKILLS 섹션으로 이동">SKILLS</a>
 					</li>
 					<li>
-						<a href="javascript:scrollAnkerTo('skills')" title="사용 스킬 섹션으로 이동">사용 스킬</a>
-					</li>
-					<li>
-						<a href="javascript:scrollAnkerTo('projects')" title="프로젝트 섹션으로 이동">프로젝트</a>
+						<a href="javascript:scrollAnkerTo('projects')" title="PROJECT 섹션으로 이동">PROJECT</a>
 					</li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<main>
-		<section id="intro" class="main-section">
-			<div class="container d-flex">
+		<section id="about" class="main-section">
+			<h2 class="container tit1">ABOUT ME</h2>
+			<div class="container d-flex mt-40">
 				<div class="content w-50per">
-					<div class="name_box d-flex align-end">
-						<h2 class="tit1">이하늘</h2>
-						<p class="tit5 fw-500 ml-8">웹 퍼블리셔</p>
+					<div class="profile-img"><img src="resource/img/common/profileImg.png" alt="이하늘 증명사진" class="img" /></div>
+					<div class="name_box d-flex align-end mt-20">
+						<p class="tit2">이하늘</p>
+						<p class="txt1 fw-500 ml-8">웹 퍼블리셔</p>
 					</div>
-					<ul class="info_box lists dot txt1 mt-40">
+					<ul class="info_box lists dot txt1 mt-20">
 						<li class="d-flex gap-8">
 							<span class="fw-500 color-gray">이메일</span>
 							<a href="mailto:haneulworks1830@gmail.com">haneulworks1830@gmail.com</a>
@@ -69,46 +68,37 @@
 						</li>
 					</ul>
 				</div>
-				<div class="content w-50per d-flex justify-center">
-					<div class="profile-img"><img src="resource/img/common/profileImg.png" alt="이하늘 증명사진" class="img" /></div>
+				<div class="content w-50per d-flex flex-column gap-40 justify-center">
+					<div class="">
+						<h3 class="tit3">경력사항</h3>
+						<ul class="lists dot txt1 mt-20">
+							<li>(주)워드앤코드<span class="ml-8 color-gray">2024.04 ~</span></li>
+							<li>(주)커머스프로<span class="ml-8 color-gray">2023.11 ~ 2024.03</span></li>
+							<li>(주)씨노우<span class="ml-8 color-gray">2022.07 ~ 2023.08</span></li>
+							<li>(주)가온스<span class="ml-8 color-gray">2022.03 ~ 2022.07</span></li>
+							<li>로보로보코딩로봇학원<span class="ml-8 color-gray">2020.10 ~ 2021.05</span></li>
+							<li>SK텔레콤대리점_선린시흥대야점<span class="ml-8 color-gray">2018.09 ~ 2020.03</span></li>
+						</ul>
+					</div>
+					<div class="">
+						<h3 class="tit3">자격증 취득</h3>
+						<ul class="lists dot txt1 mt-20">
+							<li>웹디자인기능사<span class="ml-8 color-gray">2021.12.24</span></li>
+							<li>GTQ 1급(포토샵)<span class="ml-8 color-gray">2021.12.17</span></li>
+							<li>컴퓨터활용능력 2급<span class="ml-8 color-gray">2021.12.24</span></li>
+							<li>자동차운전면허증(2종보통)<span class="ml-8 color-gray">2017.04.12</span></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</section>
-
-		<section id="career" class="main-section">
-			<div class="container d-flex">
-				<div class="content w-50per">
-					<h3 class="tit3">경력사항</h3>
-					<ul class="lists dot txt1 mt-20">
-                        <li><span>(주)워드앤코드</span>2024.04 ~</li>
-						<li><span>(주)커머스프로</span>2023.11 ~ 2024.03</li>
-                        <li><span>(주)씨노우</span>2022.07 ~ 2023.08</li>
-                        <li><span>(주)가온스</span>2022.03 ~ 2022.07</li>
-                        <li><span>로보로보코딩로봇학원</span>2020.10 ~ 2021.05</li>
-                        <li><span>SK텔레콤대리점_선린시흥대야점</span>2018.09 ~ 2020.03</li>
-                        <li><span>스포츠용품 외 아르바이트</span>2017.08 ~ 2018.09</li>
-                        <li><span>소야소 고깃집</span>2015.10 ~ 2017.02</li>
-                    </ul>
-				</div>
-				<div class="content w-50per">
-					<h3 class="tit3">자격증 취득</h3>
-					<ul class="lists dot txt1 mt-20">
-                        <li><span>웹디자인기능사</span>2021.12.24</li>
-                        <li><span>GTQ 1급(포토샵)</span>2021.12.17</li>
-                        <li><span>컴퓨터활용능력 2급</span>2021.12.24</li>
-                        <li><span>자동차운전면허증(2종보통)</span>2017.04.12</li>
-                    </ul>
-				</div>
-			</div>
-		</section>
-		
 
 		<section id="skills" class="main-section">
-			<h3 class="container tit3">사용 스킬</h3>
+			<h2 class="container tit1">SKILLS</h2>
 			
-			<div class="container d-flex gap-40">
+			<div class="container d-flex gap-60 mt-20">
 
-				<div class="skills content w-50per mt-20">
+				<div class="skills content w-50per">
 
 					<div class="skills__group">
 						<h4 class="tit5">퍼블리싱</h4>
@@ -233,8 +223,46 @@
 		</section>
 		
 
-		<section id="projects" class="main-section">
-			<div class="container">프로젝트 내용</div>
+		<section id="projects" class="main-section color-lightgray">
+			<h2 class="container tit1">PROJECT</h2>
+			<div class="project__wrap container mt-40">
+				<ul class="project-filter__wrap">
+					<li class="project-filter__item"><button type="button" class="btn-reset">초기화</button></li>
+					<li class="project-filter__item"><button type="button" class="btn">홈페이지</button></li>
+					<li class="project-filter__item"><button type="button" class="btn">쇼핑몰</button></li>
+					<li class="project-filter__item"><button type="button" class="btn">CMS</button></li>
+					<li class="project-filter__item"><button type="button" class="btn">자사솔루션</button></li>
+				</ul>
+				<ul class="project-list__wrap mt-20">
+					<li class="project-list__content" data-project-type="home">
+						<a href="https://nhiss.nhis.or.kr/" class="project-list__thumb" target="_blank" rel="noopener noreferrer" title="건강보험공단 빅데이터 플랫폼 새창 이동">
+							<img src="./resource/img/portfolio/nhiss.png" alt="건강보험공단 빅데이터 플랫폼 홈페이지 썸네일" />
+						</a>
+						<div class="project-list__info">
+							<h5 class="tit4">건강보험공단 빅데이터 플랫폼</h5>
+							<p class="txt1">반응형 | 280페이지 이상 하드코딩, 컨포넌트화 작업 | 3Month</p>
+						</div>
+					</li>
+					<li class="project-list__content" data-project-type="home,cms">
+						<a href="https://h2hub.or.kr/main/index.do" class="project-list__thumb" target="_blank" rel="noopener noreferrer" title="수소경제 종합정보포털 새창 이동">
+							<img src="./resource/img/portfolio/h2hub.png" alt="수소경제 종합정보포털 썸네일" />
+						</a>
+						<div class="project-list__info">
+							<h5 class="tit5">수소경제 종합정보포털 2024년 리뉴얼</h5>
+							<p class="txt1">반응형 | 지니웍스 CMS 기반, 유지보수 및 홈페이지 운영 · 관리 | 2Month</p>
+						</div>
+					</li>
+					<li class="project-list__content" data-project-type="shop">
+						<a href="https://gonggumom.mallup.co.kr/" class="project-list__thumb" target="_blank" rel="noopener noreferrer" title="공구맘 공동구매 쇼핑몰 새창 이동">
+							<img src="./resource/img/portfolio/gonggumom.png" alt="공구맘 공동구매 쇼핑몰 썸네일" />
+						</a>
+						<div class="project-list__info">
+							<h5 class="tit4">공구맘 공동구매 쇼핑몰</h5>
+							<p class="txt1">모바일 | 커머스프로 자사 솔루션 기반 퍼블리싱 | 7Day</p>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</section>
 		
 
