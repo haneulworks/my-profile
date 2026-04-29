@@ -1,13 +1,16 @@
 @charset 'utf-8';
 @use 'mixin' as *;
 
-.main-section{ display: block; min-height: 100dvh; padding: calc($header-height + 6rem) 0;}
+.main-section{ display: block; min-height: 100dvh; padding: calc($header-height + 6rem) 0;
+	@include res680{ padding: calc($header-height--m + 4rem) 0;}
 
-#intro{ @include d-flex; @include align-center;
-	@include res_hover{
-		a{ position: relative;
-			&::after{ content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background-color: $color-black; transition: width 0.3s ease;}
-			&:hover::after{ width: 100%;}
+}
+
+#about,
+#skills{
+	@include res680{ 
+		.container{ @include d-flex; @include flex-column; gap: 4rem;
+			.content{ width: 100%;}
 		}
 	}
 }
@@ -44,12 +47,14 @@
 .project__wrap{ position: relative;}
 
 .project-filter{
-	&__wrap{ position: absolute; top: -8rem; right: 0; @include d-flex; @include align-center; gap: .8rem;}
+	&__wrap{ position: absolute; top: -8rem; right: 4rem; @include d-flex; @include align-center; gap: .8rem;
+		@include res991{ position: unset;}
+	}
 	&__item{
 		&:has(.btn-reset){ margin-right: .4rem;}
-		.btn{ padding: .4rem 1.6rem; @include text-style(depth1, 400, 1.6); border: 1px solid $color-graybasic; border-radius: 999px; color: $color-graybd;
+		.btn{ padding: .4rem 1.6rem; @include text-style(depth1, 400, 1.6); border: 1px solid $color-graybasic; border-radius: 999px;;
 			&.active{ border-color: transparent; background-color: $color-sub; color: $color-realwhite; font-weight: 500;}
-			&-reset{ width: 2.4rem; height: 2.4rem; background-color: unset; background-image: url('../img/common/icon/icon_reset.png'); background-repeat: no-repeat; background-position: center; background-size: 100%; font-size: 0; margin: 0; padding: 0; line-height: 0; filter: invert(1); cursor: pointer;
+			&-reset{ width: 2.4rem; height: 2.4rem; background-color: unset; background-image: url('../img/common/icon/icon_reset.png'); background-repeat: no-repeat; background-position: center; background-size: 100%; font-size: 0; margin: 0; padding: 0; line-height: 0; cursor: pointer;
 				/* 회전 애니메이션 */
 				@keyframes rotateAnim {
 					from { transform: rotate(0deg); }
@@ -68,14 +73,21 @@
 	&__content{ width: calc(50% - 2rem);
 		
 	}
-	&__thumb{ display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 1.6rem; overflow: hidden;
+	&__thumb{ display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 1.6rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 		img{ width: 100%; height: 100%; max-width: fit-content; object-fit: cover;}
 	}
 	&__info{ margin-top: 1.6rem;
 		.txt1{ margin-top: .2rem;}
 	}
+
+	@include res991{ 
+		&__wrap{ gap: 2.4rem;}
+	}
+	@include res680{ 
+		&__wrap{ gap: 3.6rem;}
+		&__content{ width: 100%;}
+	}
 }
-#projects{ /*background-color: #3b4047;*/ background-color: #32363d;}
 
 .tools{
 	&__group{ 
@@ -87,5 +99,65 @@
 			&.icon-72{ width: 7.2rem;}
 			img{ display: block; width: 100%;}
 		}
+	}
+}
+
+.operations-card {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+
+	&__item {
+		padding: 2rem;
+		border-radius: 12px;
+		background: rgba(255,255,255,.05);
+		transition: .3s;
+
+		&:hover {
+			transform: translateY(-6px);
+			background: rgba(255,255,255,.08);
+		}
+
+		&.highlight {
+			border: 1px solid rgba(255,255,255,.2);
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+	}
+
+	&__desc {
+		color: #aaa;
+		margin-top: 0.8rem;
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .4rem;
+		margin-top: 1.6rem;
+
+		.tag {
+			@include caption-style(depth2, 400, 1.2);
+			padding: .2rem .6rem;
+			border-radius: 999px;
+			background: rgba(255,255,255,.1);
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 0.8rem;
+		@include caption-style(depth2, 400, 1.2);
+		color: #777;
+	}
+
+	&__link {
+		@include caption-style(depth2, 400, 1.2);
+		text-transform: uppercase;
+		border-bottom: 1px solid currentColor;
 	}
 }

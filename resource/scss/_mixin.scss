@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+@use "sass:map";
 @import 'bar';
 
 @mixin res($w){
@@ -40,9 +41,11 @@
 @mixin container {
     width: 100%;
     max-width: $container;
-    margin-left: auto;
-    margin-right: auto;
-	@include res991{ padding-left: 1.2rem; padding-right: 1.2rem;}
+	margin-left: auto;
+	margin-right: auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+	@include res991{ padding-left: 1.6rem; padding-right: 1.6rem;}
 }
 
 // grid
