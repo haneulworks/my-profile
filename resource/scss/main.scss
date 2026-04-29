@@ -76,3 +76,16 @@
 	}
 }
 #projects{ /*background-color: #3b4047;*/ background-color: #32363d;}
+
+.tools{
+	&__group{ 
+		& + & { margin-top: 4rem;}
+	}
+	&__list{ @include d-flex; @include flex-wrap; gap: 2.4rem; margin-top: 2rem}
+	&__item{
+		.icon{ @include d-flex; @include align-center; width: 4.8rem; height: 4.8rem;
+			&.icon-72{ width: 7.2rem;}
+			img{ display: block; width: 100%;}
+		}
+	}
+}

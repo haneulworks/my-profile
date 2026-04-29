@@ -115,13 +115,15 @@ header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.025rem;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 @media (max-width: 991px) {
   .gnb ul > li > a {
     font-size: 1.5rem;
   }
+}
+.gnb ul > li > a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .tnb-wrap {
@@ -295,12 +297,14 @@ header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: -0.025rem;
-  letter-spacing: -0.05rem;
 }
 @media (max-width: 991px) {
   .sitemap-wrap h2 {
     font-size: 2.4rem;
   }
+}
+.sitemap-wrap h2 {
+  letter-spacing: -0.05rem;
 }
 .sitemap-wrap .site-map .depth1:has(.etc-menu-hide) {
   display: none;
@@ -399,12 +403,14 @@ header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: -0.025rem;
-  letter-spacing: -0.05rem;
 }
 @media (max-width: 991px) {
   .sitemap-page-wrap h2 {
     font-size: 2.4rem;
   }
+}
+.sitemap-page-wrap h2 {
+  letter-spacing: -0.05rem;
 }
 
 .site-mo-scroll {
@@ -453,12 +459,14 @@ header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.025rem;
-  letter-spacing: -0.05rem;
 }
 @media (max-width: 991px) {
   .site-map .depth1 > a {
     font-size: 1.6rem;
   }
+}
+.site-map .depth1 > a {
+  letter-spacing: -0.05rem;
 }
 .site-map .depth1 > ul {
   margin-top: 4.4rem;
@@ -472,12 +480,14 @@ header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  letter-spacing: -0.05rem;
 }
 @media (max-width: 991px) {
   .site-map .depth2 > a {
     font-size: 1.4rem;
   }
+}
+.site-map .depth2 > a {
+  letter-spacing: -0.05rem;
 }
 .site-map .depth2 > ul {
   display: none;
@@ -630,12 +640,14 @@ body.etc .sub-visual {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* 서브페이지 대메뉴 제목 */
 }
 @media (max-width: 991px) {
   .sub-visual {
     height: 27.7rem;
   }
+}
+.sub-visual {
+  /* 서브페이지 대메뉴 제목 */
 }
 .sub-visual h2 {
   position: absolute;

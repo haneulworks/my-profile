@@ -34,7 +34,7 @@
 
 .inline-flex{ @include inline-flex;}
 
-@for $i from 1 through 60 {
+@for $i from 1 through 100 {
 	.gap-#{$i} {
 		gap: ($i / 10) * 1rem;
 		@include res991 {

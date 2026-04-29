@@ -51,15 +51,31 @@ $(function() {
 			}
 		}
 	});
-
-	// 프로그래스 바
-	$('.progress-bar').each(function() {
-		var percent = $(this).find('.progress-per').text().trim();
-		$(this).find('.progress-fill').animate({
-			width: percent + '%'
-		}, 1000);
-	});
 });
+
+
+// 프로그래스 바
+const skillsSection = document.querySelector('#skills');
+let isAnimated = false;
+
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting && !isAnimated) {
+			isAnimated = true;
+
+			$('.progress-bar').each(function() {
+				var percent = $(this).find('.progress-per').text().trim();
+				$(this).find('.progress-fill').animate({
+					width: percent + '%'
+				}, 1000);
+			});
+		}
+	});
+}, {
+	threshold: 0.3 // 30% 보이면 실행
+});
+
+observer.observe(skillsSection);
 
 
 $(document).ready(function() {

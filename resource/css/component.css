@@ -634,13 +634,15 @@
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  vertical-align: middle;
-  cursor: pointer;
 }
 @media (max-width: 991px) {
   .type01 .b-chk + label {
     font-size: 1.4rem;
   }
+}
+.type01 .b-chk + label {
+  vertical-align: middle;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .type01 .b-chk + label {
@@ -701,13 +703,15 @@
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  cursor: pointer;
-  vertical-align: super;
 }
 @media (max-width: 991px) {
   .type01 .b-radio + label {
     font-size: 1.4rem;
   }
+}
+.type01 .b-radio + label {
+  cursor: pointer;
+  vertical-align: super;
 }
 .type01 .b-radio + label::before {
   content: "";
@@ -778,13 +782,15 @@ input[type=password]::-ms-clear {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 @media (max-width: 991px) {
   .ui-input {
     font-size: 1.4rem;
   }
+}
+.ui-input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media (max-width: 991px) {
   .ui-input {
@@ -922,12 +928,14 @@ textarea {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  scrollbar-gutter: stable both-edges;
 }
 @media (max-width: 991px) {
   textarea {
     font-size: 1.4rem;
   }
+}
+textarea {
+  scrollbar-gutter: stable both-edges;
 }
 textarea::-webkit-input-placeholder {
   color: #747478;
@@ -935,7 +943,6 @@ textarea::-webkit-input-placeholder {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  font-family: "Pretendard", sans-serif;
 }
 textarea::-moz-placeholder {
   color: #747478;
@@ -943,7 +950,6 @@ textarea::-moz-placeholder {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  font-family: "Pretendard", sans-serif;
 }
 textarea:-ms-input-placeholder {
   color: #747478;
@@ -951,7 +957,6 @@ textarea:-ms-input-placeholder {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  font-family: "Pretendard", sans-serif;
 }
 textarea::-ms-input-placeholder {
   color: #747478;
@@ -959,7 +964,6 @@ textarea::-ms-input-placeholder {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  font-family: "Pretendard", sans-serif;
 }
 textarea::placeholder {
   color: #747478;
@@ -967,7 +971,6 @@ textarea::placeholder {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  font-family: "Pretendard", sans-serif;
 }
 @media (max-width: 991px) {
   textarea::-webkit-input-placeholder {
@@ -986,6 +989,21 @@ textarea::placeholder {
     font-size: 1.4rem;
   }
 }
+textarea::-webkit-input-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
+textarea::-moz-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
+textarea:-ms-input-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
+textarea::-ms-input-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
+textarea::placeholder {
+  font-family: "Pretendard", sans-serif;
+}
 textarea.full {
   width: 100%;
   height: 32rem;
@@ -995,8 +1013,6 @@ textarea.no-resize {
 }
 textarea::-webkit-scrollbar {
   width: 10px; /* 스크롤바의 너비 */
-  /* 스크롤바 트랙 위쪽 여백 공간 */
-  /* 만일 스크롤바 트랙 아래쪽도 여백 공간 */
 }
 textarea::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
@@ -1006,9 +1022,15 @@ textarea::-webkit-scrollbar-thumb {
 textarea::-webkit-scrollbar-track {
   background: #F3F5F9; /*스크롤바 뒷 배경 색상*/
 }
+textarea::-webkit-scrollbar {
+  /* 스크롤바 트랙 위쪽 여백 공간 */
+}
 textarea::-webkit-scrollbar-button:vertical:start:decrement {
   display: block;
   height: 16px;
+}
+textarea::-webkit-scrollbar {
+  /* 만일 스크롤바 트랙 아래쪽도 여백 공간 */
 }
 textarea::-webkit-scrollbar-button:vertical:end:decrement {
   display: block;
@@ -1595,12 +1617,14 @@ label:not(.hidden) + .select {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  color: #111;
 }
 @media (max-width: 991px) {
   .table-basic {
     font-size: 1.3rem;
   }
+}
+.table-basic {
+  color: #111;
 }
 .table-basic th, .table-basic td {
   padding: 1rem 1.2rem;
@@ -1652,12 +1676,14 @@ label:not(.hidden) + .select {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.025rem;
-  color: #111;
 }
 @media (max-width: 991px) {
   .table-list {
     font-size: 1.4rem;
   }
+}
+.table-list {
+  color: #111;
 }
 .table-list thead {
   position: relative;
@@ -2259,12 +2285,14 @@ label:not(.hidden) + .select {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.025rem;
-  cursor: pointer;
 }
 @media (max-width: 991px) {
   .tab-list li .tab-item {
     font-size: 1.4rem;
   }
+}
+.tab-list li .tab-item {
+  cursor: pointer;
 }
 .tab-list li.active .tab-item {
   border-color: #7bc4f7;

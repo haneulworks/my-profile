@@ -501,14 +501,16 @@
   font-weight: 600;
   line-height: 0;
   letter-spacing: -0.025rem;
-  color: #7bc4f7;
-  vertical-align: middle;
-  line-height: 0;
 }
 @media (max-width: 991px) {
   .essential::after {
     font-size: 1.3rem;
   }
+}
+.essential::after {
+  color: #7bc4f7;
+  vertical-align: middle;
+  line-height: 0;
 }
 
 /* font-size */
@@ -1816,6 +1818,366 @@
 @media (max-width: 991px) {
   .gap-60 {
     gap: 4.8rem;
+  }
+}
+
+.gap-61 {
+  gap: 6.1rem;
+}
+@media (max-width: 991px) {
+  .gap-61 {
+    gap: 4.88rem;
+  }
+}
+
+.gap-62 {
+  gap: 6.2rem;
+}
+@media (max-width: 991px) {
+  .gap-62 {
+    gap: 4.96rem;
+  }
+}
+
+.gap-63 {
+  gap: 6.3rem;
+}
+@media (max-width: 991px) {
+  .gap-63 {
+    gap: 5.04rem;
+  }
+}
+
+.gap-64 {
+  gap: 6.4rem;
+}
+@media (max-width: 991px) {
+  .gap-64 {
+    gap: 5.12rem;
+  }
+}
+
+.gap-65 {
+  gap: 6.5rem;
+}
+@media (max-width: 991px) {
+  .gap-65 {
+    gap: 5.2rem;
+  }
+}
+
+.gap-66 {
+  gap: 6.6rem;
+}
+@media (max-width: 991px) {
+  .gap-66 {
+    gap: 5.28rem;
+  }
+}
+
+.gap-67 {
+  gap: 6.7rem;
+}
+@media (max-width: 991px) {
+  .gap-67 {
+    gap: 5.36rem;
+  }
+}
+
+.gap-68 {
+  gap: 6.8rem;
+}
+@media (max-width: 991px) {
+  .gap-68 {
+    gap: 5.44rem;
+  }
+}
+
+.gap-69 {
+  gap: 6.9rem;
+}
+@media (max-width: 991px) {
+  .gap-69 {
+    gap: 5.52rem;
+  }
+}
+
+.gap-70 {
+  gap: 7rem;
+}
+@media (max-width: 991px) {
+  .gap-70 {
+    gap: 5.6rem;
+  }
+}
+
+.gap-71 {
+  gap: 7.1rem;
+}
+@media (max-width: 991px) {
+  .gap-71 {
+    gap: 5.68rem;
+  }
+}
+
+.gap-72 {
+  gap: 7.2rem;
+}
+@media (max-width: 991px) {
+  .gap-72 {
+    gap: 5.76rem;
+  }
+}
+
+.gap-73 {
+  gap: 7.3rem;
+}
+@media (max-width: 991px) {
+  .gap-73 {
+    gap: 5.84rem;
+  }
+}
+
+.gap-74 {
+  gap: 7.4rem;
+}
+@media (max-width: 991px) {
+  .gap-74 {
+    gap: 5.92rem;
+  }
+}
+
+.gap-75 {
+  gap: 7.5rem;
+}
+@media (max-width: 991px) {
+  .gap-75 {
+    gap: 6rem;
+  }
+}
+
+.gap-76 {
+  gap: 7.6rem;
+}
+@media (max-width: 991px) {
+  .gap-76 {
+    gap: 6.08rem;
+  }
+}
+
+.gap-77 {
+  gap: 7.7rem;
+}
+@media (max-width: 991px) {
+  .gap-77 {
+    gap: 6.16rem;
+  }
+}
+
+.gap-78 {
+  gap: 7.8rem;
+}
+@media (max-width: 991px) {
+  .gap-78 {
+    gap: 6.24rem;
+  }
+}
+
+.gap-79 {
+  gap: 7.9rem;
+}
+@media (max-width: 991px) {
+  .gap-79 {
+    gap: 6.32rem;
+  }
+}
+
+.gap-80 {
+  gap: 8rem;
+}
+@media (max-width: 991px) {
+  .gap-80 {
+    gap: 6.4rem;
+  }
+}
+
+.gap-81 {
+  gap: 8.1rem;
+}
+@media (max-width: 991px) {
+  .gap-81 {
+    gap: 6.48rem;
+  }
+}
+
+.gap-82 {
+  gap: 8.2rem;
+}
+@media (max-width: 991px) {
+  .gap-82 {
+    gap: 6.56rem;
+  }
+}
+
+.gap-83 {
+  gap: 8.3rem;
+}
+@media (max-width: 991px) {
+  .gap-83 {
+    gap: 6.64rem;
+  }
+}
+
+.gap-84 {
+  gap: 8.4rem;
+}
+@media (max-width: 991px) {
+  .gap-84 {
+    gap: 6.72rem;
+  }
+}
+
+.gap-85 {
+  gap: 8.5rem;
+}
+@media (max-width: 991px) {
+  .gap-85 {
+    gap: 6.8rem;
+  }
+}
+
+.gap-86 {
+  gap: 8.6rem;
+}
+@media (max-width: 991px) {
+  .gap-86 {
+    gap: 6.88rem;
+  }
+}
+
+.gap-87 {
+  gap: 8.7rem;
+}
+@media (max-width: 991px) {
+  .gap-87 {
+    gap: 6.96rem;
+  }
+}
+
+.gap-88 {
+  gap: 8.8rem;
+}
+@media (max-width: 991px) {
+  .gap-88 {
+    gap: 7.04rem;
+  }
+}
+
+.gap-89 {
+  gap: 8.9rem;
+}
+@media (max-width: 991px) {
+  .gap-89 {
+    gap: 7.12rem;
+  }
+}
+
+.gap-90 {
+  gap: 9rem;
+}
+@media (max-width: 991px) {
+  .gap-90 {
+    gap: 7.2rem;
+  }
+}
+
+.gap-91 {
+  gap: 9.1rem;
+}
+@media (max-width: 991px) {
+  .gap-91 {
+    gap: 7.28rem;
+  }
+}
+
+.gap-92 {
+  gap: 9.2rem;
+}
+@media (max-width: 991px) {
+  .gap-92 {
+    gap: 7.36rem;
+  }
+}
+
+.gap-93 {
+  gap: 9.3rem;
+}
+@media (max-width: 991px) {
+  .gap-93 {
+    gap: 7.44rem;
+  }
+}
+
+.gap-94 {
+  gap: 9.4rem;
+}
+@media (max-width: 991px) {
+  .gap-94 {
+    gap: 7.52rem;
+  }
+}
+
+.gap-95 {
+  gap: 9.5rem;
+}
+@media (max-width: 991px) {
+  .gap-95 {
+    gap: 7.6rem;
+  }
+}
+
+.gap-96 {
+  gap: 9.6rem;
+}
+@media (max-width: 991px) {
+  .gap-96 {
+    gap: 7.68rem;
+  }
+}
+
+.gap-97 {
+  gap: 9.7rem;
+}
+@media (max-width: 991px) {
+  .gap-97 {
+    gap: 7.76rem;
+  }
+}
+
+.gap-98 {
+  gap: 9.8rem;
+}
+@media (max-width: 991px) {
+  .gap-98 {
+    gap: 7.84rem;
+  }
+}
+
+.gap-99 {
+  gap: 9.9rem;
+}
+@media (max-width: 991px) {
+  .gap-99 {
+    gap: 7.92rem;
+  }
+}
+
+.gap-100 {
+  gap: 10rem;
+}
+@media (max-width: 991px) {
+  .gap-100 {
+    gap: 8rem;
   }
 }
 
