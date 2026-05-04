@@ -2,6 +2,11 @@
 main {
   padding-top: 12rem;
 }
+@media (max-width: 680px) {
+  main {
+    padding-top: 6rem;
+  }
+}
 
 .main-section {
   display: block;
@@ -10,7 +15,7 @@ main {
 }
 @media (max-width: 680px) {
   .main-section {
-    padding: 2rem 0;
+    padding: 6rem 0;
   }
 }
 
