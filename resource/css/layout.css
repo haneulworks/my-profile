@@ -8,7 +8,7 @@
 
 .container {
   width: 100%;
-  max-width: 148rem;
+  max-width: 140rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 4rem;
@@ -23,7 +23,7 @@
 
 /* header */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -37,12 +37,6 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   background-color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-}
-header.whiteMode .gnb ul > li > a {
-  color: #fff;
-}
-header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a, header.whiteMode:has(.is-hover) .gnb ul > li > a, header.whiteMode:has(.is-focus) .gnb ul > li > a {
-  color: #111;
 }
 
 .header-inner {
@@ -129,6 +123,14 @@ header.whiteMode:hover .gnb ul > li > a, header.whiteMode:focus .gnb ul > li > a
 .gnb ul > li > a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+.gnb ul > li > a.active {
+  color: #7bc4f7;
+}
+@media (min-width: 1280px) {
+  .gnb ul > li > a:hover {
+    color: #7bc4f7;
+  }
 }
 @media (max-width: 991px) {
   .gnb ul > li {

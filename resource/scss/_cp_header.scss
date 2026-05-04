@@ -1,36 +1,11 @@
 @charset 'utf-8';
 @use 'mixin' as *;
 
-header{ position: sticky; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(4px); transition: 0.3s; z-index: 6;
+header{ position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(4px); transition: 0.3s; z-index: 6;
 	&:hover,
 	&:focus,
 	&:has(.is-hover),
 	&:has(.is-focus){ background-color: $color-realwhite; transition: 0.3s;}
-
-	&.whiteMode{
-		.gnb{
-			ul{
-				> li{
-					> a{ color: $color-realwhite;}
-				}
-				
-			}
-		}
-
-		&:hover,
-		&:focus,
-		&:has(.is-hover),
-		&:has(.is-focus){ 
-			.gnb{
-				ul{
-					> li{
-						> a{ color: $color-black;}
-					}
-					
-				}
-			}
-		}
-	}
 }
 
 .header-inner{ @include d-flex; @include align-center; @include justify-between; height: $header-height; /*padding: 0 5rem;*/
@@ -47,7 +22,12 @@ header{ position: sticky; top: 0; left: 0; width: 100%; background: rgba(255, 25
 	ul{ @include d-flex; @include align-center; height: 100%;
 		> li{ height: 100%; padding: 4.5rem 3.8rem;
 			&:last-of-type{ padding-right: 0;}
-			> a{ display: block; height: 100%; color: $color-black; @include title-style(depth5, 600, 1.5); transition: 0.3s;}
+			> a{ display: block; height: 100%; color: $color-black; @include title-style(depth5, 600, 1.5); transition: 0.3s;
+				&.active{ color: $color-main;}
+				@include res_hover{
+					&:hover{ color: $color-main;}
+				}
+			}
 		}
 		
 	}

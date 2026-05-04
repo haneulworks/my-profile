@@ -1,6 +1,8 @@
 @charset 'utf-8';
 @use 'mixin' as *;
 
+main{ padding-top: $header-height;}
+
 .main-section{ display: block; min-height: 100dvh; padding: calc($header-height - 6rem) 0;
 	@include res680{ padding: calc($header-height--m - 4rem) 0;}
 
@@ -65,14 +67,14 @@
 					animation: rotateAnim 0.5s linear;
 				}
 			}
+
+			@include res(480px){ padding: 0.2rem 1rem; font-size: 1.2rem;}
 		}
 	}
 }
 .project-list{
-	&__wrap{ @include d-flex; @include flex-wrap; gap: 4rem;}
-	&__content{ width: calc(50% - 2rem);
-		
-	}
+	&__wrap{ gap: 4rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem;}
+	//&__content{ width: calc(50% - 2rem);}
 	&__thumb{ display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 1.6rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 		img{ width: 100%; height: 100%; max-width: fit-content; object-fit: cover;}
 	}
@@ -84,8 +86,7 @@
 		&__wrap{ gap: 2.4rem;}
 	}
 	@include res680{ 
-		&__wrap{ gap: 3.6rem;}
-		&__content{ width: 100%;}
+		&__wrap{ grid-template-columns: 1fr; gap: 3.6rem;}
 	}
 }
 
@@ -102,40 +103,31 @@
 	}
 }
 
-.operations-card {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 2rem;
+.operations-card{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
 
-	&__item {
-		padding: 2rem;
-		border-radius: 12px;
-		background: rgba(255,255,255,.05);
-		transition: .3s;
+	@include res680{ grid-template-columns: 1fr; gap: 1.6rem;}
 
-		&:hover {
-			transform: translateY(-6px);
-			background: rgba(255,255,255,.08);
+	&__item{ padding: 2rem; border-radius: 1.2rem; background: rgba(255,255,255,.05); transition: .25s;
+
+		@include res_hover{
+			&:hover{ transform: translateY(-6px); background: rgba(255,255,255,.08);}
 		}
 
-		&.highlight {
-			border: 1px solid rgba(255,255,255,.2);
-		}
+		&.highlight{ border: 1px solid rgba(255,255,255,.2);}
 	}
 
 	&__title {
-		font-weight: 600;
+		@include title-style(depth5, 500, 1.3);
 	}
 
 	&__desc {
-		color: #aaa;
-		margin-top: 0.8rem;
+		margin-top: 0.4rem;
+		@include text-style(depth1, 400, 1.5);
+		color: $color-graydisable;
 	}
 
 	&__tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: .4rem;
+		@include d-flex; @include flex-wrap; gap: .4rem;
 		margin-top: 1.6rem;
 
 		.tag {

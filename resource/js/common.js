@@ -42,13 +42,37 @@ function scrollAnkerTo(id) {
 	x.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// 스크롤 이벤트 라이브러리 AOS 사용
-AOS.init({
-	duration: 1000,
-	disable: function() { // 모바일에서 AOS 사용안함
-		var maxWidth = 991; // 모바일 기기 너비 기준 (예: 768px)
-		return window.innerWidth < maxWidth;
+$(function () {
+	const $sections = $('.main-section');
+	const $gnbLinks = $('.gnb a');
+
+	function setActiveMenu() {
+		const scrollTop = $(window).scrollTop();
+		const headerHeight = $('header').outerHeight();
+		const point = scrollTop + headerHeight + 80;
+
+		let currentId = '';
+
+		$sections.each(function () {
+			const sectionTop = $(this).offset().top;
+			const sectionBottom = sectionTop + $(this).outerHeight();
+
+			if (point >= sectionTop && point < sectionBottom) {
+				currentId = $(this).attr('id');
+			}
+		});
+
+		$gnbLinks.removeClass('active');
+
+		if (currentId) {
+			$gnbLinks
+				.filter(`[href*="${currentId}"]`)
+				.addClass('active');
+		}
 	}
+
+	$(window).on('scroll resize load', setActiveMenu);
+	setActiveMenu();
 });
 
 $(document).ready(function() {
