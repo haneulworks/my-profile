@@ -19,12 +19,45 @@ main{ padding-top: $header-height;
 	}
 }
 
-.profile-img{ width: 20rem; border-radius: 1.6rem; overflow: hidden; opacity: 0; transform: translateY(10%); animation:slideIn .5s ease-out forwards;
-	.img{ display: block; width: 100%; max-width: fit-content;}
 
-	@keyframes slideIn {
-		0%{ opacity: 0; transform: translateY(10%);}
-		100%{ opacity: 1; transform: translateY(0);}
+.profile{
+	&__wrap{
+		@include res680{
+			@include d-flex; gap: 2rem;
+		}
+	}
+	&-img{ width: 20rem; border-radius: 1.6rem; overflow: hidden; opacity: 0; transform: translateY(10%); animation:slideIn .5s ease-out forwards;
+		.img{ display: block; width: 100%; max-width: fit-content;}
+
+		@keyframes slideIn {
+			0%{ opacity: 0; transform: translateY(10%);}
+			100%{ opacity: 1; transform: translateY(0);}
+		}
+		@include res680{ position: relative; width: 10rem; height: 14rem;
+			.img{ position: absolute; top: 0; left: 55%; transform: translateX(-50%); width: 150%; max-width: unset;}
+		}
+	}
+}
+
+.info{
+	&__wrap{ margin-top: 2rem;
+		@include res680{ margin-top: 0;
+			width: calc(100% - 10rem);
+		}
+
+		.name_box{
+			.txt1{ font-size: 1.2rem;}
+		}
+	}
+	&_box{
+		@include res680{ margin-top: 1rem;
+			&.lists.dot li.mo-column{ @include flex-column; @include align-start; gap: 0rem; padding-left: 0;
+				&:before{ display: none;}
+				& + li{ margin-top: 0.8rem;}
+
+				span{ font-size: 1.2rem; color: $color-grayfont;}
+			}
+		}
 	}
 }
 

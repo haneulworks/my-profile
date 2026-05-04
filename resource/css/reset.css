@@ -28,8 +28,7 @@ time, mark, audio, video {
        appearance: none;
   -webkit-appearance: none;
   -webkit-overflow-scrolling: auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -114,6 +113,5 @@ a:active {
 
 .is-focus {
   outline: 2px dashed #7bc4f7;
-  -webkit-transition: unset;
   transition: unset;
 }

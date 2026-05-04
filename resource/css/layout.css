@@ -29,28 +29,20 @@ header {
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(4px);
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: 6;
 }
 header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   background-color: #fff;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .header-inner {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: center;
   -moz-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   -moz-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   height: 12rem; /*padding: 0 5rem;*/
 }
@@ -74,7 +66,6 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 @media (max-width: 991px) {
@@ -89,19 +80,21 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
     height: 3.8rem;
   }
 }
+@media (max-width: 480px) {
+  .logo {
+    width: 4.8rem;
+    height: 3.8rem;
+  }
+}
 
 .gnb {
   display: block;
   height: 100%;
 }
 .gnb ul {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: center;
   -moz-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 100%;
 }
@@ -113,7 +106,9 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   padding-right: 0;
 }
 .gnb ul > li > a {
-  display: block;
+  display: inline-flex;
+  -moz-align-items: center;
+  align-items: center;
   height: 100%;
   color: #111;
   font-size: 2rem;
@@ -127,7 +122,6 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   }
 }
 .gnb ul > li > a {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 .gnb ul > li > a.active {
@@ -143,11 +137,17 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
     padding: 1.6rem 0.8rem;
   }
 }
+@media (max-width: 480px) {
+  .gnb ul > li {
+    padding: 1.6rem 0.6rem;
+  }
+  .gnb ul > li > a {
+    font-size: 1.2rem;
+  }
+}
 
 .tnb-wrap {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   margin-left: auto;
 }
@@ -156,41 +156,29 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   width: 4.8rem;
   height: 4.8rem;
   font-size: 0;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 .tnb-wrap .icon-search {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: center;
   -moz-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .tnb-wrap .icon-user {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: center;
   -moz-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .tnb-wrap .icon img {
   width: 2.4rem;
   display: block;
-  -webkit-transition: 0.25s;
   transition: 0.25s;
 }
 @media (max-width: 991px) {
@@ -214,10 +202,8 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   position: absolute;
   left: 1.2rem;
   display: inline-block;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 2.4rem;
   height: 0.2rem;
   background-color: #fff;
@@ -252,16 +238,14 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   left: 1rem;
 }
 .sitemap-trigger.is-active span:nth-of-type(1) {
-  -webkit-transform: translateY(0.8rem) rotate(-45deg);
-          transform: translateY(0.8rem) rotate(-45deg);
+  transform: translateY(0.8rem) rotate(-45deg);
 }
 .sitemap-trigger.is-active span:nth-of-type(2) {
   opacity: 0;
 }
 .sitemap-trigger.is-active span:nth-of-type(3) {
   bottom: 1.5rem;
-  -webkit-transform: translateY(-0.9rem) rotate(45deg);
-          transform: translateY(-0.9rem) rotate(45deg);
+  transform: translateY(-0.9rem) rotate(45deg);
 }
 @media (max-width: 991px) {
   .sitemap-trigger.is-active span {
@@ -292,17 +276,11 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
   background-size: 25.8%;
 }
 .sitemap-wrap .inner {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: center;
   -moz-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   -moz-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 16rem 4.2rem 0 10rem;
 }
@@ -329,24 +307,16 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
 }
 @media (max-width: 991px) {
   .sitemap-wrap .inner {
-    -webkit-box-orient: vertical;
     -moz-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: start;
     -moz-align-items: flex-start;
-    -ms-flex-align: start;
     align-items: flex-start;
     padding: 0;
   }
   .sitemap-wrap .user-menu {
-    -ms-display: flexbox; /* Over IE10 */
-    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+    -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
     display: flex;
-    -webkit-box-align: center;
     -moz-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     width: 100%;
     padding: 0 2.4rem;
@@ -378,8 +348,7 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
     position: absolute;
     top: 50%;
     right: 0;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     display: inline-block;
     width: 0.3rem;
     height: 0.3rem;
@@ -392,24 +361,16 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
     background-image: none;
   }
   .sitemap-wrap .inner {
-    -webkit-box-pack: justify;
     -moz-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 }
 .sitemap-page-wrap .inner {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: start;
   -moz-align-items: flex-start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: justify;
   -moz-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .sitemap-page-wrap h2 {
@@ -451,12 +412,9 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
 }
 
 .site-map {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   -webkit-box-lines: multiple;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   row-gap: 8rem;
   width: 100%;
@@ -556,7 +514,6 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1.1rem;
-    -webkit-transition: all 0.2s;
     transition: all 0.2s;
   }
   .site-map .depth1 > ul {
@@ -572,11 +529,8 @@ header:hover, header:focus, header:has(.is-hover), header:has(.is-focus) {
     color: #fff;
   }
   .site-map .depth1:has(> a.active) > a::after {
-    -webkit-filter: grayscale(1) brightness(0) invert(1);
-            filter: grayscale(1) brightness(0) invert(1);
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-    -webkit-transition: all 0.2s;
+    filter: grayscale(1) brightness(0) invert(1);
+    transform: rotate(180deg);
     transition: all 0.2s;
   }
   .site-map .depth1:not(:has(> a.active)) > ul {
@@ -649,9 +603,7 @@ body.etc .sub-visual {
 
 .sub-visual {
   position: relative;
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   width: 100%;
   height: 39rem;
@@ -671,8 +623,7 @@ body.etc .sub-visual {
   position: absolute;
   top: 19rem;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   color: #fff;
   text-align: center;
   font-size: 4.8rem;
@@ -709,9 +660,7 @@ body.etc .sub-visual {
 }
 .sub-visual .pull-down-menu ul.container {
   position: relative;
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   height: 6.4rem;
   z-index: 2;
@@ -756,15 +705,13 @@ body.etc .sub-visual {
   position: absolute;
   top: 50%;
   right: 1.7rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 2.4rem;
   height: 2.4rem;
   background-image: url("../img/common/arrow-drop-down.png");
   background-repeat: no-repeat;
   background-size: 1rem;
   background-position: center;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 .sub-visual .pull-down-menu .li-depth01:last-of-type::after {
@@ -780,9 +727,7 @@ body.etc .sub-visual {
 }
 .sub-visual .pull-down-menu .li-depth01.active .path-selected::after {
   opacity: 1;
-  -webkit-transform: rotate(180deg) translateY(50%);
-          transform: rotate(180deg) translateY(50%);
-  -webkit-transition: 0.2s;
+  transform: rotate(180deg) translateY(50%);
   transition: 0.2s;
 }
 .sub-visual .pull-down-menu .path-depth {
@@ -859,17 +804,11 @@ body.etc .sub-visual {
 }
 
 .page-title {
-  -ms-display: flexbox; /* Over IE10 */
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
-  -webkit-box-align: center;
   -moz-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   -moz-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-top: 7rem;
   margin-bottom: 3rem;
