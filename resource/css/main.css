@@ -328,6 +328,9 @@ main {
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
+.operations-card__item.highlight {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 @media (min-width: 1280px) {
   .operations-card__item:hover {
     -webkit-transform: translateY(-6px);
@@ -335,8 +338,13 @@ main {
     background: rgba(255, 255, 255, 0.08);
   }
 }
-.operations-card__item.highlight {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+@media (max-width: 680px) {
+  .operations-card__item {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .operations-card__item:nth-child(2n) {
+    background: rgba(255, 255, 255, 0.08);
+  }
 }
 .operations-card__title {
   font-size: 2rem;

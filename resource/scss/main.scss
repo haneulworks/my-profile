@@ -108,12 +108,15 @@ main{ padding-top: $header-height;}
 	@include res680{ grid-template-columns: 1fr; gap: 1.6rem;}
 
 	&__item{ padding: 2rem; border-radius: 1.2rem; background: rgba(255,255,255,.05); transition: .25s;
-
+		&.highlight{ border: 1px solid rgba(255,255,255,.2);}
 		@include res_hover{
 			&:hover{ transform: translateY(-6px); background: rgba(255,255,255,.08);}
 		}
 
-		&.highlight{ border: 1px solid rgba(255,255,255,.2);}
+		@include res680{ background: rgba(255,255,255,.03);
+			&:nth-child(2n){ background: rgba(255,255,255,.08);}
+		}
+
 	}
 
 	&__title {
