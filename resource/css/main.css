@@ -271,6 +271,7 @@ main {
   border-radius: 1.6rem;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.25s;
 }
 .project-list__thumb img {
   width: 100%;
@@ -279,6 +280,12 @@ main {
   max-width: fit-content;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (min-width: 1280px) {
+  .project-list__thumb:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
 }
 .project-list__info {
   margin-top: 1.6rem;
