@@ -1,8 +1,14 @@
 @charset "UTF-8";
 .btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   text-decoration: none;
   border: none;
@@ -28,16 +34,19 @@
   .btn:hover {
     text-decoration: underline;
     text-underline-position: from-font;
+    -webkit-transition: all 0.2s;
     transition: all 0.2s;
   }
 }
 .btn:focus {
   outline-offset: 0.2rem;
   outline: 2px solid rgba(123, 196, 247, 0.8);
+  -webkit-transition: unset;
   transition: unset;
 }
 .btn.is-focus {
   outline: 2px dashed #7bc4f7;
+  -webkit-transition: unset;
   transition: unset;
 }
 .btn + .btn:not(.btn-half, .btn-full) {
@@ -239,14 +248,21 @@
   color: #fff;
 }
 .btn-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  -moz-column-gap: 0.4rem;
-       column-gap: 0.4rem;
+  -webkit-column-gap: 0.4rem;
+     -moz-column-gap: 0.4rem;
+          column-gap: 0.4rem;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 5.6rem;
@@ -267,16 +283,24 @@
   background-size: 1.5rem;
 }
 .btn-link-right {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  -moz-column-gap: 0.6rem;
-       column-gap: 0.6rem;
+  -webkit-column-gap: 0.6rem;
+     -moz-column-gap: 0.6rem;
+          column-gap: 0.6rem;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   padding-left: 2.2rem;
@@ -303,14 +327,20 @@
   }
 }
 .btn-download {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
   width: 16rem;
   border: 1px solid #7bc4f7;
   background-color: #fff;
@@ -348,17 +378,23 @@
 }
 
 .btn-wrap {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-lines: multiple;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 0.8rem;
   row-gap: 0.8rem;
 }
 .btn-wrap.nowrap {
   -webkit-box-lines: single;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
 @media (max-width: 991px) {
@@ -372,16 +408,19 @@
 .btn-wrap.al-center {
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .btn-wrap.al-start {
   -webkit-box-pack: start;
   -moz-box-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 .btn-wrap.al-end {
   -webkit-box-pack: end;
   -moz-box-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .btn-wrap .btn + .btn {
@@ -418,15 +457,20 @@
 }
 
 .chk-area {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   -webkit-box-lines: multiple;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 24px;
   row-gap: 16px;
 }
 .chk-area.chk-column {
+  -webkit-box-orient: vertical;
   -moz-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .chk-area .form-check + .form-check {
@@ -434,8 +478,12 @@
 }
 
 .form-check {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .form-check + .form-check {
   margin-left: 24px;
@@ -443,6 +491,8 @@
 .form-check input[type=radio] ~ label,
 .form-check input[type=checkbox] ~ label {
   position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   min-height: 20px;
   padding-left: calc(20px + 8px);
@@ -459,6 +509,7 @@
 .form-check input[type=checkbox] ~ label::before {
   display: block;
   content: "";
+  -webkit-transition: 0.1s cubic-bezier(0.4, 0, 0.23, 1);
   transition: 0.1s cubic-bezier(0.4, 0, 0.23, 1);
 }
 .form-check input[type=radio]:focus ~ label::before,
@@ -483,7 +534,8 @@
   background-color: #fff;
   border: 6px solid #cacaca;
   border-radius: 50%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media (max-width: 991px) {
   .form-check input[type=radio] ~ label::before {
@@ -515,7 +567,8 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .form-check input[type=checkbox] ~ label::after {
   content: "";
@@ -559,6 +612,8 @@
   background-image: url(../img/common/ico_check_primary_disabled.svg);
 }
 .form-check.ico-only {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
 }
@@ -604,12 +659,14 @@
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 20px;
   height: 20px;
   border-radius: 4PX;
   border: 1px solid #ddd;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media (max-width: 991px) {
   .type01 .b-chk + label::before {
@@ -669,8 +726,10 @@
   border: unset;
   background-color: #cacace;
   font-size: 13px;
-  box-sizing: border-box;
-  transform: translateY(-50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .type01 .b-radio + label::after {
   content: "";
@@ -682,7 +741,8 @@
   height: 8px;
   border-radius: 8px;
   background-color: #fff;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .type01 .b-radio:checked + label::before {
   background-color: #7bc4f7;
@@ -697,7 +757,8 @@
   height: 8px;
   border-radius: 8px;
   background-color: #fff;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 input[type=text],
@@ -728,7 +789,8 @@ input[type=password]::-ms-clear {
   }
 }
 .ui-input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media (max-width: 991px) {
   .ui-input {
@@ -738,7 +800,16 @@ input[type=password]::-ms-clear {
     background-position: right 1rem center;
   }
 }
+.ui-input::-webkit-input-placeholder {
+  color: #747478;
+}
 .ui-input::-moz-placeholder {
+  color: #747478;
+}
+.ui-input:-ms-input-placeholder {
+  color: #747478;
+}
+.ui-input::-ms-input-placeholder {
   color: #747478;
 }
 .ui-input::placeholder {
@@ -791,41 +862,54 @@ input[type=password]::-ms-clear {
 }
 
 .input-wrap {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-lines: multiple;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 0.8rem;
   row-gap: 0.8rem;
 }
 .input-wrap.nowrap {
   -webkit-box-lines: single;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
 .input-wrap.al-center {
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .input-wrap.al-start {
   -webkit-box-pack: start;
   -moz-box-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 .input-wrap.al-end {
   -webkit-box-pack: end;
   -moz-box-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .input-box {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
 }
 .input-box-col {
+  -webkit-box-orient: vertical;
   -moz-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .input-box-row label:not(.hidden) + input,
@@ -837,7 +921,8 @@ textarea {
   padding: 1.6rem 0.6rem;
   border: 1px solid #ddd;
   border-radius: 1.2rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font: inherit;
   font-size: 1.8rem;
   font-weight: 400;
@@ -852,7 +937,28 @@ textarea {
 textarea {
   scrollbar-gutter: stable both-edges;
 }
+textarea::-webkit-input-placeholder {
+  color: #747478;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025rem;
+}
 textarea::-moz-placeholder {
+  color: #747478;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025rem;
+}
+textarea:-ms-input-placeholder {
+  color: #747478;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025rem;
+}
+textarea::-ms-input-placeholder {
   color: #747478;
   font-size: 1.8rem;
   font-weight: 400;
@@ -867,14 +973,32 @@ textarea::placeholder {
   letter-spacing: -0.025rem;
 }
 @media (max-width: 991px) {
+  textarea::-webkit-input-placeholder {
+    font-size: 1.4rem;
+  }
   textarea::-moz-placeholder {
+    font-size: 1.4rem;
+  }
+  textarea:-ms-input-placeholder {
+    font-size: 1.4rem;
+  }
+  textarea::-ms-input-placeholder {
     font-size: 1.4rem;
   }
   textarea::placeholder {
     font-size: 1.4rem;
   }
 }
+textarea::-webkit-input-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
 textarea::-moz-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
+textarea:-ms-input-placeholder {
+  font-family: "Pretendard", sans-serif;
+}
+textarea::-ms-input-placeholder {
   font-family: "Pretendard", sans-serif;
 }
 textarea::placeholder {
@@ -921,7 +1045,8 @@ textarea::-webkit-scrollbar-button:vertical:end:decrement {
 .textarea-box {
   border: 1px solid #ddd;
   border-radius: 1.2rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .textarea-box.full {
   width: 100%;
@@ -1130,6 +1255,7 @@ label:not(.hidden) + .select {
 .custom-select {
   position: relative;
   display: inline-block;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   min-width: 12rem;
@@ -1179,14 +1305,19 @@ label:not(.hidden) + .select {
   max-height: 0;
   overflow-y: hidden;
   opacity: 0;
-  transform: translateY(-0.5rem);
+  -webkit-transform: translateY(-0.5rem);
+          transform: translateY(-0.5rem);
+  -webkit-transition: max-height 0.25s ease, opacity 0.25s ease, -webkit-transform 0.25s ease;
+  transition: max-height 0.25s ease, opacity 0.25s ease, -webkit-transform 0.25s ease;
   transition: max-height 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  transition: max-height 0.25s ease, opacity 0.25s ease, transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 .custom-select__options.is-open {
   margin-top: 0.4rem;
   max-height: 20rem;
   opacity: 1;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .custom-select__options.scrollable {
   overflow-y: auto;
@@ -1200,6 +1331,7 @@ label:not(.hidden) + .select {
   padding: 1rem 1.2rem;
   cursor: pointer;
   font-size: 1.6rem;
+  -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
 @media (min-width: 1280px) {
@@ -1215,32 +1347,41 @@ label:not(.hidden) + .select {
 }
 
 .select-wrap {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-lines: multiple;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 0.8rem;
   row-gap: 0.8rem;
 }
 .select-wrap.nowrap {
   -webkit-box-lines: single;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
 .select-wrap.al-center {
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .select-wrap.al-start {
   -webkit-box-pack: start;
   -moz-box-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 .select-wrap.al-end {
   -webkit-box-pack: end;
   -moz-box-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .select-wrap label:not(.hidden) + select, .select-wrap label:not(.hidden) + .select {
@@ -1255,12 +1396,14 @@ label:not(.hidden) + .select {
   border-radius: 1.2rem;
 }
 .box-shadow-effect {
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .box-shadow-effect:hover {
   border-color: transparent;
   background-color: #fff;
-  box-shadow: 0px 2px 20px 2px rgba(20, 115, 230, 0.2) !important;
+  -webkit-box-shadow: 0px 2px 20px 2px rgba(20, 115, 230, 0.2) !important;
+          box-shadow: 0px 2px 20px 2px rgba(20, 115, 230, 0.2) !important;
 }
 
 .box-radius-12 {
@@ -1293,6 +1436,7 @@ label:not(.hidden) + .select {
 @media (max-width: 480px) {
   .col3 {
     -webkit-box-lines: multiple;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   .col3 li {
@@ -1593,12 +1737,16 @@ label:not(.hidden) + .select {
 }
 @media (max-width: 991px) {
   .table-list tr {
-    -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+    -ms-display: flexbox; /* Over IE10 */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
     display: flex;
     -webkit-box-lines: multiple;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
     position: relative;
     width: auto;
     padding: 1.6rem 1.2rem;
@@ -1649,7 +1797,9 @@ label:not(.hidden) + .select {
   position: relative;
 }
 .table-list td.subject .subject-inner {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   position: relative;
 }
@@ -1666,13 +1816,19 @@ label:not(.hidden) + .select {
   font-weight: 600;
 }
 .table-list td .status {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   min-width: 7rem;
@@ -1691,9 +1847,13 @@ label:not(.hidden) + .select {
   }
 }
 .table-list td .b-etc-box {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-left: 2rem;
 }
@@ -1743,6 +1903,8 @@ label:not(.hidden) + .select {
     padding-right: unset;
   }
   .table-list td:not(.num) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     gap: 0.8rem;
   }
@@ -1750,7 +1912,8 @@ label:not(.hidden) + .select {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     width: 4.2rem;
     padding: 0 0.5rem;
     text-align: center;
@@ -1768,15 +1931,20 @@ label:not(.hidden) + .select {
   }
   .table-list td.subject .ellipsis {
     display: inline-block;
+    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     max-width: 100%;
   }
   .table-list td.cate {
-    order: -2;
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
   }
   .table-list td.state {
-    order: -1;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
   .table-list td .status {
     display: inline-block;
@@ -1889,7 +2057,8 @@ label:not(.hidden) + .select {
   }
   .admin-table-list.table-list td.num {
     position: unset;
-    transform: unset;
+    -webkit-transform: unset;
+            transform: unset;
     width: auto;
     text-align: center;
   }
@@ -1907,10 +2076,14 @@ label:not(.hidden) + .select {
     max-width: unset;
   }
   .admin-table-list.table-list td.cate {
-    order: unset;
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
   }
   .admin-table-list.table-list td.state {
-    order: unset;
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
   }
   .admin-table-list.table-list td .status {
     display: inline-block;
@@ -1972,14 +2145,20 @@ label:not(.hidden) + .select {
 }
 
 .badge {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   min-width: 7rem;
+  max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
   height: 3rem;
@@ -2063,7 +2242,9 @@ label:not(.hidden) + .select {
   }
 }
 .tab-list {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
   gap: 1rem;
   position: relative;
@@ -2079,13 +2260,19 @@ label:not(.hidden) + .select {
   border: 2px solid transparent;
 }
 .tab-list li .tab-item {
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
+  -webkit-box-align: center;
   -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   min-width: 13rem;
   height: 5rem;
@@ -2144,7 +2331,9 @@ label:not(.hidden) + .select {
 }
 
 .board-tab-list01 {
-  -ms-display: flexbox; /* Over IE10 */ /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */ /* TWEENER - IE 10 */ /* NEW - Chrome */
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
   display: flex;
 }
 .board-tab-list01 li {

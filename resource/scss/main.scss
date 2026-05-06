@@ -5,7 +5,7 @@ main{ padding-top: $header-height;
 	@include res680{ padding-top: $header-height--m;}
 }
 
-.main-section{ display: block; min-height: 100dvh; padding: calc($header-height - 6rem) 0;
+.main-section{ display: block; /* min-height: 100dvh; */ padding: calc($header-height - 6rem) 0;
 	@include res680{ padding: $header-height--m 0;}
 
 }
@@ -111,10 +111,14 @@ main{ padding-top: $header-height;
 	&__wrap{ gap: 4rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem;}
 	//&__content{ width: calc(50% - 2rem);}
 	&__thumb{ display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 1.6rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); transition: .25s;
+		&.no-page::after{ content: '운영 종료'; opacity: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0,0,0,0.7); color: $color-realwhite; padding: .4rem 1rem; border-radius: 999px; @include caption-style(depth2, 400, 1.2); transition: all 0.25s ease-in-out;}
 		img{ width: 100%; height: 100%; max-width: fit-content; object-fit: cover;}
 
 		@include res_hover{
-			&:hover{ transform: scale(1.04); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);}
+			&:not(.no-page):hover{ transform: scale(1.04); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);}
+			&.no-page:hover{ position: relative;
+				&::after{ opacity: 1; transition: all 0.25s ease-in-out;}
+			}
 		}
 	}
 	&__info{ margin-top: 1.6rem;
