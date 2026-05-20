@@ -9,7 +9,7 @@
   background-color: #4792b1;
 }
 .bg-point {
-  background-color: #50e4ff;
+  background-color: #7bc4f7;
 }
 .bg-white {
   background-color: #fff;
@@ -76,10 +76,10 @@
   color: #4792b1;
 }
 .color-sub {
-  color: #22455e;
+  color: #4792b1;
 }
 .color-point {
-  color: #50e4ff;
+  color: #7bc4f7;
 }
 .color-red {
   color: #E63946;
@@ -2228,6 +2228,15 @@
 }
 .ml-10 {
   margin-left: 1rem;
+}
+.ml-12 {
+  margin-left: 1.2rem;
+}
+.ml-14 {
+  margin-left: 1.4rem;
+}
+.ml-16 {
+  margin-left: 1.6rem;
 }
 .ml-20 {
   margin-left: 2rem;

@@ -26,7 +26,7 @@ main{ padding-top: $header-height;
 			@include d-flex; gap: 2rem;
 		}
 	}
-	&-img{ width: 20rem; border-radius: 1.6rem; overflow: hidden; opacity: 0; transform: translateY(10%); animation:slideIn .5s ease-out forwards;
+	&-img{ width: 23rem; height: 30rem; border-radius: 1.6rem; overflow: hidden; opacity: 0; transform: translateY(10%); animation:slideIn .5s ease-out forwards;
 		.img{ display: block; width: 100%; max-width: fit-content;}
 
 		@keyframes slideIn {
@@ -62,7 +62,8 @@ main{ padding-top: $header-height;
 }
 
 .skills__list { 
-	.skills__item{	margin-bottom: 20px; color: $color-semiblack;
+	.skills__item{	color: $color-semiblack;
+		+ .skills__item{ margin-top: 3.7rem;}
 		&[data-skill="HTML5"] .progress-fill{ background-color: #e34f26;}
 		&[data-skill="CSS3"] .progress-fill{ background-color: #264de4;}
 		&[data-skill="SCSS"] .progress-fill{ background-color: #c6538c;}
@@ -146,7 +147,7 @@ main{ padding-top: $header-height;
 	}
 }
 
-.operations-card{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+.operations-card{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem;
 
 	@include res680{ grid-template-columns: 1fr; gap: 1.6rem;}
 
@@ -164,6 +165,7 @@ main{ padding-top: $header-height;
 
 	&__title {
 		@include title-style(depth5, 500, 1.3);
+		word-break: keep-all;
 	}
 
 	&__desc {
@@ -197,5 +199,9 @@ main{ padding-top: $header-height;
 		@include caption-style(depth2, 400, 1.2);
 		text-transform: uppercase;
 		border-bottom: 1px solid currentColor;
+		transition: color 0.2s ease-in-out;
+		@include res_hover{
+			&:hover{ color: $color-realwhite;}
+		}
 	}
 }

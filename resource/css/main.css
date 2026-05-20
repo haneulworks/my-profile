@@ -1,6 +1,6 @@
 @charset "UTF-8";
 main {
-  padding-top: 12rem;
+  padding-top: 10rem;
 }
 @media (max-width: 680px) {
   main {
@@ -10,7 +10,7 @@ main {
 
 .main-section {
   display: block; /* min-height: 100dvh; */
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 @media (max-width: 680px) {
   .main-section {
@@ -47,7 +47,8 @@ main {
   }
 }
 .profile-img {
-  width: 20rem;
+  width: 23rem;
+  height: 30rem;
   border-radius: 1.6rem;
   overflow: hidden;
   opacity: 0;
@@ -145,8 +146,10 @@ main {
 }
 
 .skills__list .skills__item {
-  margin-bottom: 20px;
   color: #303030;
+}
+.skills__list .skills__item + .skills__item {
+  margin-top: 3.7rem;
 }
 .skills__list .skills__item[data-skill=HTML5] .progress-fill {
   background-color: #e34f26;
@@ -252,7 +255,7 @@ main {
 }
 .project-filter__item .btn.active {
   border-color: transparent;
-  background-color: #22455e;
+  background-color: #4792b1;
   color: #fff;
   font-weight: 500;
 }
@@ -426,7 +429,7 @@ main {
 .operations-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 4rem;
 }
 @media (max-width: 680px) {
   .operations-card {
@@ -469,6 +472,9 @@ main {
   .operations-card__title {
     font-size: 1.5rem;
   }
+}
+.operations-card__title {
+  word-break: keep-all;
 }
 .operations-card__desc {
   margin-top: 0.4rem;
@@ -550,4 +556,11 @@ main {
 .operations-card__link {
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+@media (min-width: 1280px) {
+  .operations-card__link:hover {
+    color: #fff;
+  }
 }

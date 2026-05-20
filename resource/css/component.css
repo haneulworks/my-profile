@@ -52,16 +52,28 @@
 .btn + .btn:not(.btn-half, .btn-full) {
   margin-left: 0.5rem;
 }
-.btn-s {
+.btn-xs {
   font-size: 1.5rem;
   min-width: 6rem;
   padding: 0.4rem 0.8rem;
 }
 @media (max-width: 991px) {
-  .btn-s {
+  .btn-xs {
     font-size: 1.3rem;
     min-width: 6rem;
     padding: 0.3rem 0.6rem;
+  }
+}
+.btn-s {
+  font-size: 1.5rem;
+  min-width: 8rem;
+  padding: 0.8rem 1.2rem;
+}
+@media (max-width: 991px) {
+  .btn-s {
+    font-size: 1.3rem;
+    min-width: 8rem;
+    padding: 0.6rem 0.8rem;
   }
 }
 .btn-m {
@@ -73,7 +85,7 @@
   .btn-m {
     font-size: 1.6rem;
     min-width: 10.8rem;
-    padding: 1.6rem 0.9rem;
+    padding: 1rem 1.6rem;
   }
 }
 .btn-l {
@@ -137,14 +149,23 @@
   background-color: #fff;
   color: #4792b1;
 }
+.btn-bg-sub {
+  background-color: #4792b1;
+  color: #fff;
+}
+.btn-bd-sub {
+  border: 1px solid #4792b1;
+  background-color: #fff;
+  color: #4792b1;
+}
 .btn-bg-point {
-  background-color: #50e4ff;
-  color: #000;
+  background-color: #7bc4f7;
+  color: #fff;
 }
 .btn-bd-point {
-  border: 1px solid #50e4ff;
+  border: 1px solid #7bc4f7;
   background-color: #fff;
-  color: #50e4ff;
+  color: #7bc4f7;
 }
 .btn-bg-gray {
   background-color: #f7f7f7;
